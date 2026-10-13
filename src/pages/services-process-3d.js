@@ -8,7 +8,7 @@
 // 1 order -> office (dot on the route, charts appear on the monitors), 2 small box office -> block, 3 big box block -> warehouse gate,
 // 4 gate open, 3 big boxes loaded into the truck. Reduced motion = static final frame. Loaded lazily by services.js; returns null without WebGL.
 import {
-  WebGLRenderer, Scene, OrthographicCamera, Group, Mesh, BoxGeometry, Color, MathUtils, MeshBasicMaterial, EdgesGeometry, SphereGeometry, LatheGeometry,
+  WebGLRenderer, Scene, OrthographicCamera, Group, Mesh, Color, MathUtils, MeshBasicMaterial, EdgesGeometry, SphereGeometry, LatheGeometry,
   ExtrudeGeometry, Shape, Vector2, Vector3, Matrix4, Quaternion, Euler,
 } from 'three';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
@@ -61,15 +61,15 @@ class Part {
     const q = r instanceof Quaternion ? r : new Quaternion().setFromEuler(new Euler(...r));
     return new Matrix4().compose(V(...p), q, V(...s));
   }
-  solid(geo, p, r, { edges = true, s, angle = EDGE_ANGLE, occGeo = geo } = {}) {
+  solid(geo, p, r, { edges = true, s, angle = EDGE_ANGLE } = {}) {
     const m = this.mat(p, r, s);
-    const og = occGeo.index ? occGeo.toNonIndexed() : occGeo.clone();
+    const og = geo.index ? geo.toNonIndexed() : geo.clone();
     og.deleteAttribute('normal'); og.deleteAttribute('uv');
     og.applyMatrix4(m);
     this.occ.push(og);
     if (edges) { const eg = new EdgesGeometry(geo, angle); eg.applyMatrix4(m); this.edge.push(...eg.attributes.position.array); }
   }
-  box(w, h, d, p, r, rad = 0.03, seg = 1) { this.solid(rb(w, h, d, Math.min(rad, 0.006), 1), p, r, { occGeo: new BoxGeometry(w, h, d) }); }   // occluder = sharp box: it covers the chamfered corner, so the hidden vertical edge does not peek out as a stub at the top vertex // one chamfer facet, small radius: a single thin outline
+  box(w, h, d, p, r, rad = 0.03, seg = 1) { this.solid(rb(w, h, d, Math.min(rad, 0.006), 1), p, r); } // one chamfer facet, small radius: a single thin outline
   cyl(radius, h, p, r = [0, 0, 0], b = 0.025) {
     this.solid(bevelCyl(radius, h, b), p, r);
     const q = r instanceof Quaternion ? r : new Quaternion().setFromEuler(new Euler(...r));
@@ -147,9 +147,14 @@ export function initProcessScene(host) {
   const ink = lineMat('--p3d-ink'), edge = lineMat('--p3d-edge'), soft = lineMat('--p3d-soft');
   const strong = lineMat('--p3d-ink', LINE_PX), gridMat = lineMat('--p3d-grid', GRID_PX, GRID_ALPHA);
   const mats = [ink, edge, soft, strong, gridMat];
-  const fill = new MeshBasicMaterial({ color: hex('--p3d-fill'), polygonOffset: true, polygonOffsetFactor: 6, polygonOffsetUnits: 6 });
-  const occ = new MeshBasicMaterial({ color: hex('--p3d-occ'), polygonOffset: true, polygonOffsetFactor: 6, polygonOffsetUnits: 6 });
+  // occluder offset: slope factor 3 (was 6) - a bigger slope offset let the hidden vertical edge of every box leak out as a bright stub / dot at its top vertex
+  const fill = new MeshBasicMaterial({ color: hex('--p3d-fill'), polygonOffset: true, polygonOffsetFactor: 3, polygonOffsetUnits: 6 });
+  const occ = new MeshBasicMaterial({ color: hex('--p3d-occ'), polygonOffset: true, polygonOffsetFactor: 3, polygonOffsetUnits: 6 });
   const M = { ink, edge, soft, strong, fill, occ };
+  // the truck and the office keep the original deeper offset (factor 6): their many near-coplanar lines (cab, arches, grille, trailer ribs, desk edges) need it
+  const fillT = new MeshBasicMaterial({ color: hex('--p3d-fill'), polygonOffset: true, polygonOffsetFactor: 6, polygonOffsetUnits: 6 });
+  const occT = new MeshBasicMaterial({ color: hex('--p3d-occ'), polygonOffset: true, polygonOffsetFactor: 6, polygonOffsetUnits: 6 });
+  const MT = { ...M, fill: fillT, occ: occT };
   const dotMat = new MeshBasicMaterial({ color: hex('--p3d-route') });
   const segs = (pts, m) => { const o = new LineSegments2(new LineSegmentsGeometry().setPositions(pts), m); o.renderOrder = 1; return o; };
   const dashMat = new LineMaterial({ color: hex('--p3d-route'), linewidth: LINE_PX, worldUnits: false, dashed: true, dashSize: 0.22, gapSize: 0.2 });
@@ -222,7 +227,7 @@ export function initProcessScene(host) {
   office.rectX(xf, bz - 0.1, 0.78, 0.7, 1.3);   // entrance door
   office.box(0.47, 0.01, 1.3, [HALL.x1 + 0.235, 1.65, bz - 0.1], undefined, 0.004);          // entrance canopy
   [-0.65, 0.45].forEach((dz) => office.box(0.05, 1.5, 0.05, [HALL.x1 + 0.44, 0.87, bz - 0.1 + dz * 0.95], undefined, 0.01));
-  office.build(M);
+  office.build(MT);
   world.add(office.group);
   const charts = [chartA, chartB, chartBars].map((pts) => { const o = segs(pts, ink); o.visible = false; world.add(o); return o; });
 
@@ -296,7 +301,7 @@ export function initProcessScene(host) {
   });
   [-0.31, 0.31].forEach((z) => truck.rectX(1.662, z, 0.69, 0.16, 0.08));                  // headlights
   truck.rectX(1.662, 0, 0.69, 0.3, 0.14);                                                 // grille
-  truck.build(M);
+  truck.build(MT);
   truck.group.scale.setScalar(0.75);
   world.add(truck.group);
 
