@@ -1,3 +1,4 @@
+import { url } from '../utils/url.js';
 import products from '../data/products.json';
 import { applyLang } from '../i18n.js';
 
@@ -21,10 +22,10 @@ const nodes = new Map(); // slug -> card element currently in the grid
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 const card = (p, isNew) => `
-  <a ${isNew ? 'data-reveal' : ''} class="card card--link product-card" href="/product.html?slug=${encodeURIComponent(p.slug)}">
-    <div class="product-card__tags">${p.categories.map((c) => `<span class="chip chip--tag"><svg class="icon icon-text" aria-hidden="true"><use href="/assets/icons/sprite.svg#${ICONS[c]}"/></svg><span data-i18n="${LABELS[c]}">${FALLBACK[c]}</span></span>`).join('')}</div>
+  <a ${isNew ? 'data-reveal' : ''} class="card card--link product-card" href="${url('/product.html')}?slug=${encodeURIComponent(p.slug)}">
+    <div class="product-card__tags">${p.categories.map((c) => `<span class="chip chip--tag"><svg class="icon icon-text" aria-hidden="true"><use href="${url('/assets/icons/sprite.svg')}#${ICONS[c]}"/></svg><span data-i18n="${LABELS[c]}">${FALLBACK[c]}</span></span>`).join('')}</div>
     <h2 class="product-card__title">${esc(p.name)}</h2>
-    <div class="product-card__footer"><span data-i18n="common.know_more">Know more</span><span class="round-btn round-btn--outline"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#arrow-up-right"/></svg></span></div>
+    <div class="product-card__footer"><span data-i18n="common.know_more">Know more</span><span class="round-btn round-btn--outline"><svg class="icon" aria-hidden="true"><use href="${url('/assets/icons/sprite.svg')}#arrow-up-right"/></svg></span></div>
   </a>`;
 
 function makeCard(p) {

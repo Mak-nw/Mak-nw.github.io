@@ -1,3 +1,4 @@
+import { url, withBase } from './utils/url.js';
 // Tiny i18n: dictionaries in src/i18n/<lang>.json; add a language by dropping a file + listing it in LOADERS
 // (and an <li role="option" data-lang> in src/partials/header.html). A key missing in a dictionary falls back to en.json.
 const LOADERS = {
@@ -28,14 +29,14 @@ export async function applyLang(lang = currentLang()) {
   });
   document.querySelectorAll('[data-i18n-html]').forEach((el) => {
     const v = dict.get(el.dataset.i18nHtml);
-    if (typeof v === 'string') el.innerHTML = v;
+    if (typeof v === 'string') el.innerHTML = withBase(v);
   });
   document.querySelectorAll('[data-i18n-attr]').forEach((el) => {
     // format: "placeholder:key;aria-label:key2"
     el.dataset.i18nAttr.split(';').forEach((pair) => {
       const [attr, key] = pair.split(':');
       const v = dict.get(key);
-      if (attr && typeof v === 'string') el.setAttribute(attr, v);
+      if (attr && typeof v === 'string') el.setAttribute(attr, v.startsWith('/') ? url(v) : v);
     });
   });
   document.querySelectorAll('[data-lang-current]').forEach((el) => { el.textContent = lang.toUpperCase(); });

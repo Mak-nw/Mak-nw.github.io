@@ -1,3 +1,4 @@
+import { url } from '../utils/url.js';
 // Services hero: wide 3D "unrolled globe" strip. Real three.js scene, PerspectiveCamera low over the sphere (almost tangent view), so the horizon
 // bends as an arc across the strip. The sphere itself is never drawn (only an invisible depth occluder): land = parallel hatch lines
 // (latitude circles clipped to the Natural Earth 110m land polygons, precomputed in /assets/img/hero-globe-land.json) + a thin coastline.
@@ -49,7 +50,7 @@ export async function initHeroGlobe(host) {
   } catch { canvas.remove(); return null; }
   renderer.setClearColor(cBg, 0);
 
-  const land = await fetch('/assets/img/hero-globe-land.json').then((r) => r.json());
+  const land = await fetch(url('/assets/img/hero-globe-land.json')).then((r) => r.json());
 
   const scene = new Scene();
   const camera = new PerspectiveCamera(CAM.fov, 3.2, 0.02, 12);

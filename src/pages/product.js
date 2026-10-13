@@ -1,3 +1,4 @@
+import { url } from '../utils/url.js';
 import details from '../data/product-details.json';
 import { applyLang } from '../i18n.js';
 
@@ -28,7 +29,7 @@ if (!p) {
   p.categories.filter((c) => LABELS[c]).forEach((c) => {
     cas.before(Object.assign(document.createElement('span'), {
       className: 'chip chip--pill chip--sm',
-      innerHTML: `<svg class="icon icon-text" aria-hidden="true"><use href="/assets/icons/sprite.svg#${ICONS[c]}"/></svg><span data-i18n="${LABELS[c][0]}">${LABELS[c][1]}</span>`,
+      innerHTML: `<svg class="icon icon-text" aria-hidden="true"><use href="${url('/assets/icons/sprite.svg')}#${ICONS[c]}"/></svg><span data-i18n="${LABELS[c][0]}">${LABELS[c][1]}</span>`,
     }));
   });
   applyLang();
@@ -38,5 +39,5 @@ if (!p) {
   setBlock('formula', p.formula, (v) => { q('[data-product-formula]').textContent = v; });
   setBlock('colour', p.colour, (v) => { q('[data-product-colour]').textContent = v; });
   setBlock('usage', p.usage, (v) => { q('[data-product-usage]').textContent = v; });
-  q('[data-product-cta]').href = `/contact.html?product=${encodeURIComponent(slug)}`;
+  q('[data-product-cta]').href = `${url('/contact.html')}?product=${encodeURIComponent(slug)}`;
 }

@@ -21,3 +21,22 @@ export function includePartials({ root }) {
     },
   };
 }
+
+// Build only: prefix root-absolute page links (href="/about.html#team") with the Vite base.
+// Assets/scripts/styles are already rewritten by Vite itself; values already starting with base are left alone.
+export function baseLinks() {
+  let base = '/';
+  let build = false;
+  return {
+    name: 'osta-base-links',
+    configResolved(c) { base = c.base; build = c.command === 'build'; },
+    transformIndexHtml: {
+      order: 'post',
+      handler(html) {
+        if (!build || base === '/') return html;
+        return html.replace(/(\s(?:href|src|poster|data-src|content)=")\/(?!\/|@vite)([^"]*")/g, (m, a, rest) =>
+          ('/' + rest).startsWith(base) ? m : `${a}${base}${rest}`);
+      },
+    },
+  };
+}
