@@ -1,0 +1,15 @@
+/* Link cards (Home Services; file keeps its old name): 4 compact cards in ONE row, each card is ONE link. ul = subgrid of the page 12 columns, li = 3 columns (4 x 3).
+   Card (.card system: --surface-white, 1px --border, --radius-lg, padding --space-5 like info-card): no buttons (clickability = cursor, hover border, focus ring): icon ring B 40 top-left, then item title .t-h3 24/32 (item-title role: compact title of a dense list/grid item), one sentence .t-body 16 --text. Equal height in the row (stretch).
+   Hover: 1px --accent border, title --accent-hover, no shadows. focus-visible: --focus-outline. */
+.link-cards { display: grid; grid-template-columns: subgrid; align-items: stretch; margin: 0; padding: 0; list-style: none; }
+.link-cards > li { grid-column: span 3; display: flex; min-width: 0; }
+.link-card { flex: 1; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto 1fr; align-items: start; row-gap: var(--space-4); padding: var(--space-5); box-sizing: border-box; background: var(--surface-white); border: 1px solid var(--border); border-radius: var(--radius-lg); color: var(--text); transition: border-color var(--dur-base) var(--ease-out); }
+.link-card > .icon-ring { grid-column: 1; grid-row: 1; justify-self: start; }
+.link-card__title { grid-column: 1; grid-row: 2; margin: 0; min-width: 0; color: var(--text-accent); overflow-wrap: break-word; hyphens: auto; transition: color var(--dur-base) var(--ease-out); }
+.link-card__text { grid-column: 1; grid-row: 3; margin: 0; min-width: 0; overflow-wrap: break-word; hyphens: auto; }
+.link-card:hover, .link-card.is-hover { border-color: var(--accent); }
+.link-card:hover .link-card__title, .link-card.is-hover .link-card__title { color: var(--accent-hover); }
+.link-card:focus-visible { outline: var(--focus-outline); outline-offset: var(--focus-offset); }
+/* --3: three title-only cards (no text row), each 2 columns; the group itself sits on 6 page columns (placed by the page, Home Products: cols 4-9). Narrow card: padding --space-4, icon, title below (hyphenated wrap) */
+.link-cards--3 > li { grid-column: span 2; }
+.link-cards--3 .link-card { grid-template-rows: auto auto; padding: var(--space-4); }

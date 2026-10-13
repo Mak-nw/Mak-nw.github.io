@@ -1,0 +1,368 @@
+{
+  "anastrozole": {
+    "name": "Anastrozole",
+    "categories": [
+      "api"
+    ],
+    "cas": "120511-73-1",
+    "formula": "C₁₇H₁₉N₅",
+    "colour": "White to off-white crystalline powder",
+    "description": "A potent, selective, non-steroidal aromatase inhibitor used as an antineoplastic hormonal agent. It inhibits the aromatase enzyme responsible for conversion of androgens to estrogens, substantially reducing circulating estrogen concentrations, particularly in postmenopausal women.",
+    "usage": "Primarily used as an API in oncology medicines for hormone-sensitive breast cancer, especially hormone receptor-positive breast cancer in postmenopausal women. It is manufactured mainly in low-dose oral solid formulations, typically tablets."
+  },
+  "ascorbic-acid": {
+    "name": "Ascorbic Acid (Vitamin C)",
+    "categories": [
+      "api",
+      "food-grade"
+    ],
+    "cas": "50-81-7",
+    "formula": "C₆H₈O₆",
+    "colour": "White or almost white crystalline powder/crystals",
+    "description": "A water-soluble vitamin and strong reducing agent with important physiological roles in collagen synthesis, antioxidant defence, iron absorption and several enzymatic reactions. Pharmaceutical-grade ascorbic acid is also valuable technologically because of its antioxidant properties and ability to protect susceptible ingredients from oxidation.",
+    "usage": "Used in vitamin preparations, multivitamins, dietary supplements, oral and injectable pharmaceutical preparations, deficiency-treatment products and combination cold/immune-support products. It is also widely used as an antioxidant in pharmaceutical and food formulations, as a nutritional ingredient in foods and beverages, and in cosmetic/dermatological products."
+  },
+  "azithromycin": {
+    "name": "Azithromycin",
+    "categories": [
+      "api"
+    ],
+    "cas": "83905-01-5",
+    "formula": "C₃₈H₇₂N₂O₁₂; commonly supplied as dihydrate",
+    "colour": "White or almost white crystalline powder",
+    "description": "A semi-synthetic azalide/macrolide antibacterial API related to erythromycin. It binds to the bacterial 50S ribosomal subunit and inhibits bacterial protein synthesis. It is notable for good tissue penetration and a relatively long elimination half-life, enabling comparatively short treatment regimens.",
+    "usage": "Used in systemic antibacterial medicines for susceptible respiratory-tract, ENT, skin and soft-tissue and certain sexually transmitted bacterial infections. Common dosage forms include tablets, capsules, powders/granules for oral suspension and intravenous preparations; specialised ophthalmic formulations are also available."
+  },
+  "bendazol": {
+    "name": "Bendazol (Dibazole)",
+    "categories": [
+      "api"
+    ],
+    "cas": "621-72-7",
+    "formula": "C₁₄H₁₂N₂; pharmaceutical material often as HCl salt",
+    "colour": "White to slightly yellowish crystalline powder",
+    "description": "A benzimidazole derivative with myotropic antispasmodic and peripheral vasodilating activity. It acts directly on smooth muscle, including vascular smooth muscle, producing a relatively moderate vasodilatory and hypotensive effect. It is an established but older API whose use is concentrated mainly in Eastern European and CIS pharmaceutical markets rather than modern Western European or US therapy.",
+    "usage": "Used in certain markets in antispasmodic and vasodilator medicines, including products for smooth-muscle spasms and as adjunctive treatment of hypertension. It has also historically been used in some neurological indications. Dosage forms include tablets and injectable solutions."
+  },
+  "chondroitin-sodium-sulfate": {
+    "name": "Chondroitin Sodium Sulfate",
+    "categories": [
+      "api",
+      "food-grade"
+    ],
+    "cas": "9082-07-9",
+    "formula": "Sulfated polysaccharide/glycosaminoglycan; variable polymer composition",
+    "colour": "White to almost white, hygroscopic powder",
+    "description": "The sodium salt of chondroitin sulfate, a naturally occurring sulfated glycosaminoglycan composed principally of repeating glucuronic acid and N-acetylgalactosamine units. It is an important structural component of cartilage and other connective tissues. Commercial material may originate from bovine, porcine, avian or marine cartilage, while the source and purification process are critical quality attributes for pharmaceutical applications.",
+    "usage": "Widely used in joint-health and osteoarthritis products, either alone or combined with glucosamine. Applications include pharmaceutical products, nutraceuticals, tablets, capsules, powders and sachets. Highly purified pharmaceutical and low-endotoxin grades can also be used in specialised medicinal applications, including parenteral products where such use is locally authorised."
+  },
+  "ciprofloxacin-hydrochloride": {
+    "name": "Ciprofloxacin Hydrochloride",
+    "categories": [
+      "api"
+    ],
+    "cas": "86393-32-0",
+    "formula": "C₁₇H₁₈FN₃O₃·HCl·H₂O (monohydrate)",
+    "colour": "Pale yellow to light yellow crystalline powder",
+    "description": "The hydrochloride salt of ciprofloxacin, a broad-spectrum fluoroquinolone antibacterial agent. Its bactericidal activity results principally from inhibition of bacterial DNA gyrase and topoisomerase IV, enzymes essential for DNA replication, transcription and repair.",
+    "usage": "Used in antibacterial medicines for susceptible urinary, gastrointestinal, respiratory, skin, bone and joint and other bacterial infections, depending on local approved indications and resistance patterns. It is formulated as tablets, oral suspensions, intravenous products and ophthalmic/otic preparations."
+  },
+  "copovidone-va64": {
+    "name": "Copovidone VA64",
+    "categories": [
+      "excipients"
+    ],
+    "cas": "25086-89-9",
+    "formula": "Copolymer of vinylpyrrolidone and vinyl acetate",
+    "colour": "White to yellowish-white powder",
+    "description": "A water-soluble copolymer of vinylpyrrolidone and vinyl acetate, typically approximately 60:40 by mass. Compared with conventional povidone, it combines strong binding properties with good plasticity and relatively low hygroscopicity. It is particularly valuable for formulations involving poorly soluble APIs and modern processing methods such as hot-melt extrusion.",
+    "usage": "Primarily used as a tablet binder, including wet granulation, dry granulation and direct compression. It is also used as a film former, solubilising polymer, crystallisation inhibitor and carrier for amorphous solid dispersions, including hot-melt-extruded formulations."
+  },
+  "crospovidone-type-a": {
+    "name": "Crospovidone Type A",
+    "categories": [
+      "excipients"
+    ],
+    "cas": "25249-54-1",
+    "formula": "(C₆H₉NO)ₙ, cross-linked PVP",
+    "colour": "White to yellowish-white hygroscopic powder",
+    "description": "A coarser-particle grade of crosslinked insoluble PVP. It rapidly draws water into a tablet through capillary action and swelling while avoiding formation of a gel layer. The larger particles generally provide strong water uptake and highly effective tablet disintegration.",
+    "usage": "Primarily used as a superdisintegrant for conventional immediate-release tablets, capsules and granules. It is particularly useful when rapid tablet breakup and active-ingredient release are required and may also enhance dissolution of poorly soluble substances."
+  },
+  "crospovidone-type-b": {
+    "name": "Crospovidone Type B",
+    "categories": [
+      "excipients"
+    ],
+    "cas": "25249-54-1",
+    "formula": "(C₆H₉NO)ₙ, cross-linked PVP",
+    "colour": "White to yellowish-white hygroscopic powder",
+    "description": "A fine-particle-size grade of crosslinked, water-insoluble polyvinylpyrrolidone (PVPP). Unlike soluble povidone, crospovidone absorbs water rapidly without forming a viscous gel. This produces very rapid wicking and promotes disintegration of compressed dosage forms. Pharmacopeias distinguish Type A and Type B principally by particle size; Type B is the finer grade.",
+    "usage": "Used predominantly as a superdisintegrant in tablets, capsules and granules, especially small tablets and orally disintegrating tablets where fine particles and good mouthfeel are desirable. It can also improve dissolution and act as a stabilising or adsorptive excipient in selected formulations."
+  },
+  "d-glucosamine-hcl": {
+    "name": "D-Glucosamine HCl",
+    "categories": [
+      "api"
+    ],
+    "cas": "66-84-2",
+    "formula": "C₆H₁₄ClNO₅",
+    "colour": "White crystalline powder",
+    "description": "The hydrochloride salt of D-glucosamine, an amino monosaccharide naturally related to components of glycosaminoglycans, proteoglycans and cartilage structures. The hydrochloride form provides a stable, highly concentrated source of glucosamine.",
+    "usage": "Mainly used in nutraceuticals and joint-health formulations, including tablets, capsules, powders and sachets, frequently in combination with chondroitin sulfate, MSM, collagen or minerals. It also has applications as a biochemical/pharmaceutical raw material and in selected cosmetic formulations."
+  },
+  "drotaverine-hcl": {
+    "name": "Drotaverine HCl",
+    "categories": [
+      "api"
+    ],
+    "cas": "985-12-6",
+    "formula": "C₂₄H₃₂ClNO₄",
+    "colour": "Yellow or yellowish crystalline powder",
+    "description": "A hydrochloride salt of drotaverine, a direct-acting smooth-muscle antispasmodic structurally related to papaverine. Its pharmacological action is associated particularly with phosphodiesterase-4 inhibition, leading to smooth-muscle relaxation without a direct anticholinergic mechanism.",
+    "usage": "Used in medicines for gastrointestinal, biliary and urinary smooth-muscle spasms, spastic abdominal pain and dysmenorrhoea. It is commonly manufactured as tablets and injectable solutions in markets where drotaverine is authorised."
+  },
+  "fosfomycin-trometamol": {
+    "name": "Fosfomycin Trometamol",
+    "categories": [
+      "api"
+    ],
+    "cas": "78964-85-9",
+    "formula": "C₇H₁₈NO₇P",
+    "colour": "White or almost white crystalline powder",
+    "description": "The trometamol/tromethamine salt of fosfomycin, a phosphonic-acid antibacterial agent with a mechanism distinct from most other antibiotic classes. Fosfomycin inhibits an early stage of bacterial cell-wall synthesis by blocking the MurA enzyme. The trometamol salt is specifically suitable for oral administration.",
+    "usage": "Primarily used for the manufacture of oral granules or sachets for treatment of uncomplicated lower urinary-tract infection/acute cystitis. A typical finished dosage is a water-soluble single-dose sachet containing the equivalent of 3 g fosfomycin, although approved indications vary by jurisdiction."
+  },
+  "glucosamine-sulfate-sodium-chloride": {
+    "name": "Glucosamine Sulfate Sodium Chloride",
+    "categories": [
+      "api"
+    ],
+    "cas": "38899-05-7",
+    "formula": "Stabilised glucosamine sulfate/NaCl complex",
+    "colour": "White to off-white crystalline powder",
+    "description": "A stabilised salt form of glucosamine sulfate, incorporating sodium chloride to improve chemical stability of the otherwise relatively unstable glucosamine sulfate system. It supplies glucosamine in sulfate form and is recognised in pharmaceutical compendial systems.",
+    "usage": "Used principally in joint-health, osteoarthritis and cartilage-support formulations, including medicinal products in some countries and nutraceuticals elsewhere. Common dosage forms include tablets, capsules, powders and sachets, often in combination with chondroitin sulfate."
+  },
+  "glycine": {
+    "name": "Glycine (Aminoacetic Acid)",
+    "categories": [
+      "api",
+      "excipients"
+    ],
+    "cas": "56-40-6",
+    "formula": "C₂H₅NO₂",
+    "colour": "White crystalline powder/crystals",
+    "description": "The simplest naturally occurring proteinogenic amino acid, consisting of a single hydrogen atom as its side chain. It is highly water soluble and has applications both as an active nutritional substance and as a multifunctional pharmaceutical formulation ingredient.",
+    "usage": "Used in amino-acid and nutritional preparations, oral and parenteral formulations, buffering systems and specialised medical solutions. As an excipient it can function as a stabiliser, bulking agent, buffering component and taste modifier, and it is also extensively used in food, nutrition and biochemical applications."
+  },
+  "hydroxyprogesterone-caproate": {
+    "name": "Hydroxyprogesterone Caproate",
+    "categories": [
+      "api"
+    ],
+    "cas": "630-56-8",
+    "formula": "C₂₇H₄₀O₄",
+    "colour": "White or almost white crystalline powder",
+    "description": "A long-acting synthetic progestational steroid, specifically the caproate ester of 17α-hydroxyprogesterone. Esterification substantially prolongs its activity after intramuscular administration. Historically it was used in obstetric, gynaecological and progesterone-deficiency-related medicines.",
+    "usage": "Used in long-acting injectable progestin formulations, including prevention of recurrent premature birth and certain gynaecological indications."
+  },
+  "hydroxypropyl-methylcellulose": {
+    "name": "Hydroxypropyl Methylcellulose (HPMC / Hypromellose)",
+    "categories": [
+      "excipients"
+    ],
+    "cas": "9004-65-3",
+    "formula": "Cellulose ether polymer; no single fixed molecular formula",
+    "colour": "White or yellowish-white fibrous/granular powder",
+    "description": "A non-ionic, semi-synthetic cellulose ether with excellent film-forming, thickening, binding and gel-forming properties. Different substitution and viscosity grades make HPMC one of the most versatile excipients in pharmaceutical formulation. Hydration of higher-viscosity grades forms a gel layer capable of controlling diffusion and erosion of an API.",
+    "usage": "Extensively used as a tablet binder, film-coating polymer, viscosity modifier, suspending agent and controlled-/sustained-release matrix polymer. It is also a principal material for vegetarian hard capsules, and specialised grades are used in ophthalmic, topical, food and cosmetic formulations."
+  },
+  "ibuprofen": {
+    "name": "Ibuprofen",
+    "categories": [
+      "api"
+    ],
+    "cas": "15687-27-1",
+    "formula": "C₁₃H₁₈O₂",
+    "colour": "White or almost white crystalline powder",
+    "description": "A propionic-acid derivative belonging to the non-steroidal anti-inflammatory drug (NSAID) class. It reduces synthesis of prostaglandins through inhibition of cyclooxygenase enzymes, providing analgesic, anti-inflammatory and antipyretic effects.",
+    "usage": "Used in pharmaceutical products for mild-to-moderate pain, inflammation and fever, including headache, musculoskeletal pain, dental pain, dysmenorrhoea and inflammatory conditions. Common formulations include tablets, soft capsules, oral suspensions, granules and topical gels/creams."
+  },
+  "magnesium-hydroxide": {
+    "name": "Magnesium Hydroxide",
+    "categories": [
+      "api"
+    ],
+    "cas": "1309-42-8",
+    "formula": "Mg(OH)₂",
+    "colour": "White, fine amorphous powder",
+    "description": "An inorganic magnesium compound, Mg(OH)₂, with limited water solubility. In pharmaceutical use it neutralises gastric acid, while at higher oral quantities its poorly absorbed magnesium ions create an osmotic effect in the intestine.",
+    "usage": "Used as an antacid for relief of gastric hyperacidity and as an osmotic laxative, commonly as “milk of magnesia”, chewable tablets or combination antacid products. Outside pharmaceuticals it also has important applications as a flame retardant and smoke suppressant."
+  },
+  "metformin-hydrochloride": {
+    "name": "Metformin Hydrochloride",
+    "categories": [
+      "api"
+    ],
+    "cas": "1115-70-4",
+    "formula": "C₄H₁₂ClN₅",
+    "colour": "White or almost white crystalline powder",
+    "description": "The hydrochloride salt of metformin, a biguanide antihyperglycaemic agent. It lowers blood glucose primarily by reducing hepatic glucose production and improving peripheral insulin sensitivity, without directly stimulating insulin secretion.",
+    "usage": "One of the principal APIs used for type 2 diabetes mellitus. It is manufactured in immediate-release and extended-release tablets and is extensively used in fixed-dose combinations with other antidiabetic agents such as DPP-4 inhibitors and SGLT2 inhibitors."
+  },
+  "pancreatin": {
+    "name": "Pancreatin",
+    "categories": [
+      "api"
+    ],
+    "cas": "8049-47-6",
+    "formula": "Biological mixture of pancreatic enzymes; no single formula",
+    "colour": "White to cream/light brown amorphous powder",
+    "description": "A biological enzyme preparation obtained from mammalian pancreas, usually porcine, containing principally lipase, protease and amylase activities. Because pancreatin is an enzymatic mixture rather than a single chemical compound, pharmaceutical quality is normally characterised by enzyme activity rather than simply by chemical assay.",
+    "usage": "Used in pancreatic enzyme replacement therapy for patients with pancreatic exocrine insufficiency, including insufficiency associated with chronic pancreatitis, cystic fibrosis or pancreatic surgery. It is commonly formulated as gastro-resistant/enteric-coated capsules, minimicrospheres, pellets or tablets to protect the enzymes from gastric acid."
+  },
+  "paracetamol": {
+    "name": "Paracetamol (Acetaminophen)",
+    "categories": [
+      "api"
+    ],
+    "cas": "103-90-2",
+    "formula": "C₈H₉NO₂",
+    "colour": "White or almost white crystalline powder",
+    "description": "A widely used non-opioid analgesic and antipyretic API. It is particularly effective for reducing pain and fever and has relatively weak peripheral anti-inflammatory activity compared with conventional NSAIDs such as ibuprofen.",
+    "usage": "Used for pain and fever management in adults and children, alone or in combination products. Major dosage forms include conventional and effervescent tablets, capsules, powders, oral suspensions/syrups, suppositories and intravenous solutions."
+  },
+  "povidone-iodine": {
+    "name": "Povidone Iodine",
+    "categories": [
+      "api"
+    ],
+    "cas": "25655-41-8",
+    "formula": "Complex of iodine with povidone; variable composition",
+    "colour": "Yellowish-brown to reddish-brown amorphous powder",
+    "description": "A stable complex of elemental iodine with povidone (PVP) that functions as an iodophor. The polymer acts as a carrier and reservoir that gradually releases microbiologically active iodine, providing broad antimicrobial action with improved handling compared with simple iodine solutions. Pharmaceutical material typically contains approximately 9–12% available iodine on a dry basis.",
+    "usage": "Widely used as a topical antiseptic and disinfectant against bacteria, fungi and many viruses and protozoa. Applications include surgical skin preparation, wound cleansing, antiseptic solutions, scrubs, ointments, gargles and other mucosal preparations where locally approved."
+  },
+  "povidone-k17": {
+    "name": "Povidone K17 (PVP K17)",
+    "categories": [
+      "excipients"
+    ],
+    "cas": "9003-39-8",
+    "formula": "(C₆H₉NO)ₙ",
+    "colour": "White to yellowish-white hygroscopic powder",
+    "description": "A relatively low-molecular-weight water-soluble grade of polyvinylpyrrolidone, characterised by a nominal K-value of about 17. Compared with K25 or K30 it produces lower solution viscosity while retaining excellent solubilising, complexing and stabilising properties.",
+    "usage": "Particularly useful as a solubiliser, dispersant, crystallisation inhibitor and stabiliser in oral liquid and solid formulations. It may also be employed in binders and solid-dispersion systems. Special endotoxin-controlled pharmaceutical grades can be suitable for parenteral and lyophilised formulations."
+  },
+  "povidone-k25": {
+    "name": "Povidone K25 (PVP K25)",
+    "categories": [
+      "excipients"
+    ],
+    "cas": "9003-39-8",
+    "formula": "(C₆H₉NO)ₙ",
+    "colour": "White to yellowish-white hygroscopic powder",
+    "description": "A medium-molecular-weight water-soluble PVP, with a nominal K-value of approximately 25. Its viscosity and binding strength fall between the lower molecular-weight K17 grades and PVP K30, providing a useful balance of processing properties and solubilising capability.",
+    "usage": "Used as a binder in tablets and granules, as well as a solubiliser, dispersing agent, film former, crystallisation inhibitor and stabilising excipient. Applications include oral solid dosage forms, oral liquids, semi-solid preparations and selected lyophilised pharmaceutical systems."
+  },
+  "povidone-k30": {
+    "name": "Povidone K30 (PVP K30)",
+    "categories": [
+      "excipients"
+    ],
+    "cas": "9003-39-8",
+    "formula": "(C₆H₉NO)ₙ",
+    "colour": "White to yellowish-white hygroscopic powder",
+    "description": "A water-soluble polyvinylpyrrolidone of medium molecular weight, with a nominal K-value around 30. It has strong adhesive and film-forming properties and is compatible with a wide range of pharmaceutical ingredients. Its polymeric nature also allows interaction with poorly soluble APIs and inhibition of drug crystallisation.",
+    "usage": "One of the most widely used tablet binders, particularly for wet granulation, but also applicable to dry granulation and direct compression. It is used as a solubiliser, dispersant, crystallisation inhibitor, film former, suspension stabiliser and carrier in solid dispersions, as well as in oral-liquid and semi-solid preparations."
+  },
+  "prednisolone-sodium-phosphate": {
+    "name": "Prednisolone Sodium Phosphate",
+    "categories": [
+      "api"
+    ],
+    "cas": "125-02-0",
+    "formula": "C₂₁H₂₇Na₂O₈P",
+    "colour": "White or almost white hygroscopic powder",
+    "description": "A water-soluble phosphate ester salt of prednisolone, a synthetic glucocorticoid. Conversion to the sodium phosphate form substantially improves aqueous solubility, allowing prednisolone activity to be incorporated into liquid and ophthalmic formulations more readily than the poorly water-soluble parent steroid.",
+    "usage": "Used in anti-inflammatory and immunosuppressive medicines, especially oral solutions and ophthalmic preparations. Applications include treatment of inflammatory, allergic and immune-mediated conditions and short-term treatment of inflammatory eye disorders."
+  },
+  "progesterone": {
+    "name": "Progesterone",
+    "categories": [
+      "api"
+    ],
+    "cas": "57-83-0",
+    "formula": "C₂₁H₃₀O₂",
+    "colour": "White or almost white crystalline powder",
+    "description": "A naturally occurring steroid hormone and progestogen essential to regulation of the menstrual cycle, implantation and maintenance of pregnancy. Pharmaceutical progesterone reproduces the biological effects of endogenous progesterone through activation of progesterone receptors.",
+    "usage": "Used in hormone replacement therapy, treatment of secondary amenorrhoea and progesterone deficiency, luteal-phase support and assisted reproductive technology (ART). Depending on formulation technology it is available as micronised oral capsules, vaginal gels/inserts/capsules and injectable preparations."
+  },
+  "pyrantel-pamoate": {
+    "name": "Pyrantel Pamoate",
+    "categories": [
+      "api"
+    ],
+    "cas": "22204-24-6",
+    "formula": "C₃₄H₃₀N₂O₆S",
+    "colour": "Yellow to yellow-brown powder",
+    "description": "The poorly soluble pamoate/embonate salt of pyrantel, an anthelmintic agent. Pyrantel causes neuromuscular depolarisation and paralysis of susceptible intestinal nematodes, allowing the parasites to be expelled from the gastrointestinal tract. Its low systemic absorption is advantageous for action within the intestinal lumen.",
+    "usage": "Used in human and veterinary anthelmintic medicines, especially against pinworm/threadworm, roundworm and hookworm infections. Common formulations include oral suspensions and tablets/chewable tablets."
+  },
+  "sorbitol": {
+    "name": "Sorbitol",
+    "categories": [
+      "excipients"
+    ],
+    "cas": "50-70-4",
+    "formula": "C₆H₁₄O₆",
+    "colour": "White crystalline powder/granules",
+    "description": "A highly water-soluble sugar alcohol (polyol) with approximately half the sweetness of sucrose and a characteristic cooling sensation in the mouth. It is chemically versatile and provides sweetness, body, moisture retention and favourable tableting properties while being non-cariogenic.",
+    "usage": "Extensively used as a pharmaceutical filler, filler-binder, sweetener, humectant, plasticiser, vehicle and stabiliser. Applications include chewable and suckable tablets, effervescent tablets, syrups, oral solutions and suspensions, toothpaste and other oral-care products. Pharmaceutical sorbitol also has use as an osmotic laxative, while high-purity grades can stabilise proteins in biologic formulations."
+  },
+  "tamoxifen-citrate": {
+    "name": "Tamoxifen Citrate",
+    "categories": [
+      "api"
+    ],
+    "cas": "54965-24-1",
+    "formula": "C₃₂H₃₇NO₈",
+    "colour": "White or almost white crystalline powder",
+    "description": "The citrate salt of tamoxifen, a non-steroidal selective estrogen receptor modulator (SERM). In breast tissue it competitively blocks estrogen receptor signalling and thereby suppresses estrogen-dependent tumour-cell proliferation.",
+    "usage": "Primarily used as an oncology API in hormone receptor-positive breast cancer, including adjuvant and metastatic treatment and, in appropriate patient groups, reduction of breast-cancer risk. It is predominantly formulated as oral tablets, with oral solutions also available in some markets."
+  },
+  "tamsulosin-hcl-sr-pellets-0-2": {
+    "name": "Tamsulosin HCl SR Pellets 0.2%",
+    "categories": [
+      "api"
+    ],
+    "cas": "106463-17-6",
+    "formula": "Tamsulosin HCl C₂₀H₂₉ClN₂O₅S; finished intermediate contains 0.2% API",
+    "colour": "White/off-white coated pellets;",
+    "description": "A ready-to-formulate sustained-release multiparticulate intermediate, rather than pure tamsulosin API. A 0.2% w/w grade contains 2 mg of tamsulosin hydrochloride per gram of pellets. The drug is incorporated into and/or coated onto pellet cores together with release-controlling polymers so that tamsulosin is gradually released during gastrointestinal transit.",
+    "usage": "Used mainly for manufacture of prolonged-/sustained-release capsules for treatment of lower urinary-tract symptoms associated with benign prostatic hyperplasia (BPH). The multiparticulate pellet system provides controlled release and more reproducible gastrointestinal distribution than a simple immediate-release powder. For illustration, a 0.4 mg tamsulosin-HCl dose corresponds theoretically to 200 mg of 0.2% pellets before allowing for product-specific assay or overage."
+  },
+  "ursodeoxycholic-acid": {
+    "name": "Ursodeoxycholic Acid (UDCA)",
+    "categories": [
+      "api"
+    ],
+    "cas": "128-13-2",
+    "formula": "C₂₄H₄₀O₄",
+    "colour": "White or almost white crystalline powder",
+    "description": "A naturally occurring hydrophilic bile acid, also known as ursodiol, that represents a minor component of the human bile-acid pool. Pharmaceutical UDCA modifies bile composition, decreases cholesterol saturation of bile and exerts choleretic and cytoprotective effects on hepatobiliary tissues.",
+    "usage": "Used principally in medicines for primary biliary cholangitis (PBC) and for dissolution of selected radiolucent, non-calcified cholesterol gallstones in appropriate patients. It is mainly formulated as tablets and capsules, with oral suspensions available for selected populations and markets."
+  },
+  "valsartan": {
+    "name": "Valsartan",
+    "categories": [
+      "api"
+    ],
+    "cas": "137862-53-4",
+    "formula": "C₂₄H₂₉N₅O₃",
+    "colour": "White to practically white fine powder",
+    "description": "A selective angiotensin II AT₁-receptor blocker (ARB). By inhibiting the effects of angiotensin II on vascular smooth muscle and aldosterone secretion, it reduces vasoconstriction and blood pressure and decreases cardiovascular workload without directly inhibiting ACE.",
+    "usage": "Used as an API in cardiovascular medicines for hypertension, heart failure and selected patients following myocardial infarction, depending on the approved market label. It is widely formulated in tablets and in fixed-dose combinations, particularly with hydrochlorothiazide or amlodipine, and valsartan is also the ARB component of the sacubitril/valsartan combination used in heart failure."
+  }
+}

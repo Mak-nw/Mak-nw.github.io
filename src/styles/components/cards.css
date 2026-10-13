@@ -1,0 +1,77 @@
+/* card: .card + surface (--surface|--white|--accent|--dark|--muted|--outline) + padding (--pad-md|--pad-lg) ; radius lg */
+.card { --_pad: var(--space-5); position: relative; display: flex; flex-direction: column; padding: var(--_pad); border-radius: var(--radius-lg); background: var(--surface-raised); color: var(--text); }
+.card--pad-md { --_pad: var(--space-4); } .card--pad-lg { --_pad: var(--space-6); }
+.card--white { background: var(--surface-white); }
+.card--muted { background: var(--surface-muted); }
+.card--outline { background: transparent; border: 1px solid var(--border); }
+.card--accent { background: var(--surface-accent); color: var(--text-on-accent); }
+.card--dark { background: var(--surface-dark); color: var(--text-on-accent); }
+.card--light { background: var(--surface); }   /* service card: light card on accent background */
+.card--link { transition: background var(--dur) var(--ease); }
+.card--link:hover,
+.card--link.is-hover { background: var(--surface-white); }
+.card--link:active,
+.card--link.is-pressed { background: var(--surface-muted); }
+.card.is-disabled { opacity: .5; pointer-events: none; }
+
+/* product-card: <a class="card card--link product-card"> */
+.product-card { min-height: var(--card-min-h); gap: var(--space-4); padding: var(--space-5) var(--space-5) var(--space-5) var(--space-6); border-radius: var(--radius-lg); }
+.product-card__tags { display: flex; align-items: center; gap: var(--space-4); }
+.product-card__title { /* item-title role: compact title of a dense list item = --type-h3 (24/32) */ color: var(--text-accent); font-size: var(--type-h3-size); line-height: var(--type-h3-lh); font-weight: var(--font-weight-medium); letter-spacing: var(--type-h3-ls); }
+.product-card__footer { margin-top: auto; display: flex; align-items: center; justify-content: space-between; color: var(--accent); font-size: var(--type-body-size); }
+
+/* tile (accent plate with icon rings top and caption bottom): Pharma/Food/Cosmetics */
+.tile { min-height: var(--card-tall-min-h); justify-content: space-between; border-radius: var(--radius-lg); padding: var(--space-4) var(--space-4) var(--space-4) var(--space-4); }
+.tile__icons { display: flex; gap: var(--space-1); }
+.tile__label { font-size: var(--type-body-size); line-height: var(--type-body-lh); max-width: 12ch; }
+
+
+/* manager contact card */
+.contact-card { gap: var(--space-4); }
+.contact-card__avatar { width: var(--avatar-sm); height: var(--avatar-sm); border-radius: var(--radius-full); object-fit: cover; }
+.contact-card__name { font-size: var(--type-body-size); }
+.contact-card__role { font-size: var(--type-label-size); color: var(--text-muted); letter-spacing: var(--type-label-ls); }
+.contact-line { display: flex; align-items: center; gap: var(--space-3); color: var(--accent); font-size: var(--type-body-size); }
+.contact-line:hover,
+.contact-line.is-hover { text-decoration: underline; }
+
+/* people-card: photo + quote + contacts */
+.people-card { position: relative; isolation: isolate; display: grid; grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr)); column-gap: var(--grid-gap); padding-block: var(--space-2); color: var(--accent); } /* inner grid = main 12-col grid: photo cols 1-3, quote+name+role 6-8 (3 cols, col 9 empty), contacts 10-12 */
+.people-card::before { content: ""; position: absolute; inset: 0 calc(-1 * var(--space-2)); z-index: -1; border-radius: var(--radius-lg); background: var(--surface-muted); } /* surface bleeds into the gutter so content edges stay on column lines */
+.people-card__photo { grid-column: 1 / span 3; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius-lg); }
+.people-card__body { grid-column: 6 / span 3; display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-5); padding-block: var(--space-4); }
+/* hanging quote mark: the opening mark sits left of column 6, the first letter aligns to it (text-indent = mark advance, EN “ 0.395em, DE „ 0.374em; font metric, not a token) */
+.people-card__body > .t-lead { text-indent: -0.395em; }
+:lang(de) .people-card__body > .t-lead { text-indent: -0.374em; }
+.people-card__name { color: var(--text); font-size: var(--type-body-size); }
+.people-card__role { font-size: var(--type-label-size); line-height: var(--type-label-lh); letter-spacing: var(--type-label-ls); color: var(--text-muted); }
+.people-card__contacts { grid-column: 10 / span 3; margin-top: auto; display: flex; flex-direction: column; gap: var(--space-3); padding-block: var(--space-4); font-size: var(--type-body-size); }
+
+/* info card (Formula / Colour / Usage) */
+.info-card { gap: var(--space-4); border-radius: var(--radius-lg); background: var(--surface-white); }
+.info-card__head { display: flex; align-items: center; gap: var(--space-4); min-width: 0; }
+.info-card__label { min-width: 0; color: var(--text-accent); font-size: var(--type-body-size); line-height: var(--type-body-lh); letter-spacing: var(--type-body-ls); font-weight: 400; }
+.info-card__value { font-size: var(--type-lead-size); line-height: var(--type-lead-lh); letter-spacing: var(--type-lead-ls); color: var(--text-accent); }
+.info-card__value--body { color: var(--text); font-size: var(--type-body-size); line-height: var(--type-body-lh); letter-spacing: var(--type-body-ls); }
+
+/* CTA block "Ready to order?" */
+.cta-block { border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6); gap: var(--space-5); min-height: var(--card-cta-min-h); justify-content: space-between; }
+.cta-block__title { font-size: var(--type-body-size); }
+.cta-block__text { font-size: var(--type-body-size); line-height: var(--type-body-lh); color: var(--text-on-accent-muted); max-width: 24ch; }
+.cta-block__foot { display: flex; align-items: flex-end; justify-content: space-between; }
+
+/* help card: "Can't find the product..." */
+.help-card { gap: var(--space-6); border-radius: var(--radius-lg); background: var(--surface-white); padding: var(--space-5); }
+.help-card__text { font-size: var(--type-body-size); line-height: var(--type-body-lh); color: var(--text-accent); max-width: 18ch; }
+
+/* slider arrows */
+.slider-arrows { display: flex; gap: var(--space-2); }
+
+/* hero */
+
+/* fact-tile (Home Quality, on a blue section): compact outline tile, no illustration. Icon ring B 40 on-accent, card title t-h2 40, one line t-body.
+   1px --border-on-accent, radius-lg, padding --space-6, transparent fill, white text. */
+.fact-tile { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-5); padding: var(--space-6); border: 1px solid var(--border-on-accent); border-radius: var(--radius-lg); color: var(--text-on-accent); }
+.fact-tile > * { margin: 0; }
+.fact-tile__title { color: var(--text-on-accent); }
+

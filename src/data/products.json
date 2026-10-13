@@ -1,0 +1,269 @@
+[
+  {
+    "id": 1,
+    "slug": "anastrozole",
+    "name": "Anastrozole",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "ascorbic-acid",
+    "name": "Ascorbic Acid (Vitamin C)",
+    "categories": [
+      "api",
+      "food-grade"
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "azithromycin",
+    "name": "Azithromycin",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "bendazol",
+    "name": "Bendazol (Dibazole)",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "chondroitin-sodium-sulfate",
+    "name": "Chondroitin Sodium Sulfate",
+    "categories": [
+      "api",
+      "food-grade"
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "ciprofloxacin-hydrochloride",
+    "name": "Ciprofloxacin Hydrochloride",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "copovidone-va64",
+    "name": "Copovidone VA64",
+    "categories": [
+      "excipients"
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "crospovidone-type-a",
+    "name": "Crospovidone Type A",
+    "categories": [
+      "excipients"
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "crospovidone-type-b",
+    "name": "Crospovidone Type B",
+    "categories": [
+      "excipients"
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "d-glucosamine-hcl",
+    "name": "D-Glucosamine HCl",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "drotaverine-hcl",
+    "name": "Drotaverine HCl",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "fosfomycin-trometamol",
+    "name": "Fosfomycin Trometamol",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "glucosamine-sulfate-sodium-chloride",
+    "name": "Glucosamine Sulfate Sodium Chloride",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "glycine",
+    "name": "Glycine (Aminoacetic Acid)",
+    "categories": [
+      "api",
+      "excipients"
+    ]
+  },
+  {
+    "id": 15,
+    "slug": "hydroxyprogesterone-caproate",
+    "name": "Hydroxyprogesterone Caproate",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "hydroxypropyl-methylcellulose",
+    "name": "Hydroxypropyl Methylcellulose (HPMC / Hypromellose)",
+    "categories": [
+      "excipients"
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "ibuprofen",
+    "name": "Ibuprofen",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 18,
+    "slug": "magnesium-hydroxide",
+    "name": "Magnesium Hydroxide",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 19,
+    "slug": "metformin-hydrochloride",
+    "name": "Metformin Hydrochloride",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 20,
+    "slug": "pancreatin",
+    "name": "Pancreatin",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 21,
+    "slug": "paracetamol",
+    "name": "Paracetamol (Acetaminophen)",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 22,
+    "slug": "povidone-iodine",
+    "name": "Povidone Iodine",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 23,
+    "slug": "povidone-k17",
+    "name": "Povidone K17 (PVP K17)",
+    "categories": [
+      "excipients"
+    ]
+  },
+  {
+    "id": 24,
+    "slug": "povidone-k25",
+    "name": "Povidone K25 (PVP K25)",
+    "categories": [
+      "excipients"
+    ]
+  },
+  {
+    "id": 25,
+    "slug": "povidone-k30",
+    "name": "Povidone K30 (PVP K30)",
+    "categories": [
+      "excipients"
+    ]
+  },
+  {
+    "id": 26,
+    "slug": "prednisolone-sodium-phosphate",
+    "name": "Prednisolone Sodium Phosphate",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 27,
+    "slug": "progesterone",
+    "name": "Progesterone",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 28,
+    "slug": "pyrantel-pamoate",
+    "name": "Pyrantel Pamoate",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 29,
+    "slug": "sorbitol",
+    "name": "Sorbitol",
+    "categories": [
+      "excipients"
+    ]
+  },
+  {
+    "id": 30,
+    "slug": "tamoxifen-citrate",
+    "name": "Tamoxifen Citrate",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 31,
+    "slug": "tamsulosin-hcl-sr-pellets-0-2",
+    "name": "Tamsulosin HCl SR Pellets 0.2%",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 32,
+    "slug": "ursodeoxycholic-acid",
+    "name": "Ursodeoxycholic Acid (UDCA)",
+    "categories": [
+      "api"
+    ]
+  },
+  {
+    "id": 33,
+    "slug": "valsartan",
+    "name": "Valsartan",
+    "categories": [
+      "api"
+    ]
+  }
+]

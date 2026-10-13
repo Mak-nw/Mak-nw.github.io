@@ -1,0 +1,20 @@
+import { initI18n } from './i18n.js';
+import './motion.js';
+
+// Mark active nav pill
+const page = document.body.dataset.page;
+document.querySelectorAll('[data-nav]').forEach((a) => {
+  if (a.dataset.nav === page) a.classList.add('is-active');
+});
+
+initI18n();
+
+// Closing CTA scene (Home, About, Services): three.js converge lines, loaded lazily only where the block exists; no WebGL or any failure hides the container.
+const closingScene = document.querySelector('[data-closing-scene]');
+if (closingScene) {
+  const hide = () => { closingScene.hidden = true; };
+  const start = () => import('./pages/closing-lines.js')
+    .then((m) => { if (!m.initClosingLines(closingScene)) hide(); })
+    .catch(hide);
+  if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 800 }); else setTimeout(start, 0);
+}

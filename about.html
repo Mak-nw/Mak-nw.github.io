@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!--@include partials/head.html-->
+  <title>About us | OSTA Trading GmbH</title>
+  <meta name="description" content="OSTA Trading GmbH is a specialised distributor of active pharmaceutical ingredients (APIs), excipients and specialty ingredients. Warehouse in Reinbek near Hamburg.">
+  <link rel="stylesheet" href="/src/styles/pages/about.css">
+  <script type="module" src="/src/pages/about-services.js"></script>
+  <script type="module">
+    // Hero contour sphere (three.js, about-hero-sphere.js; the old hero-3d.js is disconnected): after first paint; any failure leaves the truck image as fallback.
+    const media = () => document.querySelector('[data-hero-media]');
+    const fallback = () => { const m = media(); if (!m) return; m.classList.add('hero--no3d'); ['role', 'aria-label', 'data-i18n-attr'].forEach((a) => m.removeAttribute(a)); };
+    const start = () => import('/src/pages/about-hero-sphere.js')
+      .then((m) => { if (!m.initAboutHeroSphere(media())) fallback(); })
+      .catch(fallback);
+    const idle = () => ('requestIdleCallback' in window ? requestIdleCallback(start, { timeout: 800 }) : setTimeout(start, 0));
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', idle); else idle();
+  </script>
+</head>
+<body data-page="about">
+  <!--@include partials/header.html-->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1 data-reveal-load="0" class="t-display t-accent hero__title" data-i18n-html="about.hero_title">From Hamburg<br>to the world</h1>
+        <p data-reveal-load="1" class="t-body hero__sub" data-i18n-html="about.hero_sub">Your choice for APIs,<br>excipients and expertise</p>
+        <div data-reveal-load="2" class="hero__facts">
+          <p class="t-body hero__fact hero__fact--l"><span data-i18n="about.hero_fact_l1">Europe &amp; worldwide</span> <span aria-hidden="true">//</span> <span data-i18n="about.hero_fact_l2">Located in the Hamburg area</span></p>
+          <a class="link-cta hero__cta" href="/catalog.html" data-i18n="about.hero_cta">Explore products</a>
+          <p class="t-body hero__fact hero__fact--r"><span data-i18n="about.hero_fact_r1">EudraGMDP registered</span> <span aria-hidden="true">//</span> <span data-i18n="about.hero_fact_r2">GDP warehouse</span></p>
+        </div>
+      </div>
+      <div class="hero__media" data-hero-media role="img" aria-label="Abstract contour map of a sphere" data-i18n-attr="aria-label:about.hero_media_label">
+        <img class="hero__image" src="/assets/img/truck.jpg" alt="Delivery truck" data-i18n-attr="alt:about.truck_alt" width="1456" height="816" decoding="async">
+      </div>
+    </section>
+
+    <section class="section--lg about-intro" id="about">
+      <div class="container about-intro__grid">
+        <div class="section-head about-intro__head">
+          <p data-reveal="fade" class="section-label t-accent" data-i18n="about.about_label">About us</p>
+          <h2 data-reveal class="t-display t-accent about-intro__title" data-i18n-html="about.about_title">Your choice for APIs, excipients and expertise</h2>
+        </div>
+        <p data-reveal class="t-lead t-accent about-intro__lead" data-i18n="about.intro_lead">OSTA Trading GmbH is a specialised distributor of active pharmaceutical ingredients (APIs), excipients and specialty ingredients for the pharmaceutical, food and cosmetics industries.</p>
+        <div class="about-intro__aside">
+          <dl class="meta-list" data-reveal-stagger>
+            <div class="meta-list__item"><dt class="meta-list__label"><span class="icon-ring"><svg class="icon icon-text" aria-hidden="true" focusable="false"><use href="/assets/icons/sprite.svg#molecule"/></svg></span><span data-i18n="about.meta_industries">Industries</span></dt><dd class="meta-list__value" data-i18n="about.tile_industries">Pharma, Food, Cosmetics</dd></div>
+            <div class="meta-list__item"><dt class="meta-list__label"><span class="icon-ring"><svg class="icon icon-text" aria-hidden="true" focusable="false"><use href="/assets/icons/sprite.svg#globe"/></svg></span><span data-i18n="about.meta_markets">Markets</span></dt><dd class="meta-list__value" data-i18n="about.tile_regions">Europe &amp; Worldwide</dd></div>
+            <div class="meta-list__item"><dt class="meta-list__label"><span class="icon-ring"><svg class="icon icon-text" aria-hidden="true" focusable="false"><use href="/assets/icons/sprite.svg#pin"/></svg></span><span data-i18n="about.meta_based">Based in</span></dt><dd class="meta-list__value" data-i18n="about.location">Hamburg area, warehouse in Reinbek</dd></div>
+          </dl>
+        </div>
+        <div data-reveal class="t-body about-intro__text">
+          <p data-i18n="about.intro_text_1">We at OSTA Trading GmbH combine our decades of professional experience in pharmaceutical industry and established network of international manufacturers, to create every opportunity for our clients to succeed.</p>
+          <p data-i18n="about.intro_text_2">At OSTA Trading GmbH we evolve along with you to meet your requirements.</p>
+          <figure class="about-intro__figure">
+            <img data-reveal="fade" class="about-intro__photo" src="/assets/img/services-warehouse-racks.jpg" alt="" loading="lazy" decoding="async" data-i18n-attr="alt:about.about_photo_alt">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-services" id="services">
+      <div class="container about-services__top">
+        <div data-reveal class="about-services__texts">
+          <div class="section-head about-services__head">
+            <p class="section-label" data-i18n="about.services_label">Services</p>
+            <h2 class="about-services__title t-display" data-i18n-html="about.services_title">Support throughout<br>the entire<br>supply process</h2>
+          </div>
+          <p class="t-body" data-i18n="about.services_text_1">We at Osta Trading pride ourselves on offering support to our clients throughout the entire supply process. From manufacturer and product sourcing, to providing logistics solution, warehousing and regulatory support. Thanks to our immense experience inside the pharmaceutical market, we were able to establish a network of not only European, but also global manufacturers. This results in our ability to offer our clients flexible solutions that are tailored to each client's individual technical, regulatory or/and commercial requirements. We don't just supply, we deliver our best.</p>
+          <p class="t-body" data-i18n="about.services_text_2">Our business aims to provide every one of our clients with professional pharmaceutical distribution, international sourcing and reliable logistics. Whether our clients require a product for an established commercial project or are searching for a new product for a new developing project, our highly experienced team will assist you with any request, guaranteeing to offer high-quality products at competitive prices.</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="about-services__list" data-reveal>
+          <div class="service-list" data-services>
+            <article class="service-card" data-model="manufacturer">
+              <div class="service-card__body">
+                <h3 class="service-card__title t-h2" data-i18n-html="about.service_manufacturer_title">Manufacturer<br>search</h3>
+                <p class="service-card__text t-body" data-i18n="about.service_manufacturer_text">Suitable APIs and excipients manufacturers. Sources matched to the technical, quality, regulatory and commercial requirements of your project.</p>
+              </div>
+              <div class="service-card__media" aria-hidden="true"><span class="service-card__fallback"></span></div>
+            </article>
+            <article class="service-card" data-model="regulatory">
+              <div class="service-card__body">
+                <h3 class="service-card__title t-h2" data-i18n-html="about.service_regulatory_title">Regulatory<br>documents</h3>
+                <p class="service-card__text t-body" data-i18n="about.service_regulatory_text">Coordination of regulatory documentation. Coordinating the regulatory documentation your project requires.</p>
+              </div>
+              <div class="service-card__media" aria-hidden="true"><span class="service-card__fallback"></span></div>
+            </article>
+            <article class="service-card" data-model="samples">
+              <div class="service-card__body">
+                <h3 class="service-card__title t-h2" data-i18n="about.service_samples_title">Samples</h3>
+                <p class="service-card__text t-body" data-i18n="about.service_samples_text">Collection of samples Samples for your evaluation and qualification procedures.</p>
+              </div>
+              <div class="service-card__media" aria-hidden="true"><span class="service-card__fallback"></span></div>
+            </article>
+            <article class="service-card" data-model="specs">
+              <div class="service-card__body">
+                <h3 class="service-card__title t-h2" data-i18n-html="about.service_specs_title">Specs &amp;<br>quality</h3>
+                <p class="service-card__text t-body" data-i18n="about.service_specs_text">Specifications and quality requirements. Agreeing on the specifications and quality your project demands.</p>
+              </div>
+              <div class="service-card__media" aria-hidden="true"><span class="service-card__fallback"></span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-slides">
+        <div class="slide slide--image" data-reveal="fade">
+          <img src="/assets/img/home-supply-drone.jpg" alt="" loading="lazy" data-i18n-attr="alt:about.hub_alt">
+          <div class="slide__head section-head">
+            <p class="section-label slide__label" data-i18n="about.logistics_label">Supply &amp; Logistics</p>
+            <h2 class="t-display slide__headline" data-i18n-html="about.logistics_headline">Reliable supply<br>and logistics<br>from Hamburg</h2>
+          </div>
+          <div class="slide__text">
+            <div class="tile__icons">
+              <span class="icon-ring icon-ring--on-accent"><svg class="icon icon-text" aria-hidden="true"><use href="/assets/icons/sprite.svg#home"/></svg></span>
+            </div>
+            <div class="slide__body">
+              <h2 class="t-h2" data-i18n-html="about.warehouse_heading">A logistics hub<br>in the Hamburg<br>metropolitan area</h2>
+              <p class="t-body" data-i18n="about.intro_location_text">Located in the Hamburg metropolitan area, with our warehouse in Reinbek, we are ideally positioned at the heart of one of Europe's leading international logistics hubs to supply our client across Europe and worldwide.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--split" data-reveal="fade">
+          <div class="slide__panel" aria-hidden="true"></div>
+          <div class="slide__content">
+            <div class="slide__body">
+              <div class="tile__icons">
+                <span class="icon-ring icon-ring--on-accent"><svg class="icon icon-text" aria-hidden="true"><use href="/assets/icons/sprite.svg#truck"/></svg></span>
+              </div>
+              <h2 class="t-h2" data-i18n="about.logistics_heading">Reliable logistics are an integral part of our business</h2>
+              <p class="t-body" data-i18n="about.logistics_text">OSTA Trading GmbH coordinates the supply chain from the manufacturer to the customer's destination, taking into consideration the specific handling, documentation and transport requirements applicable to pharmaceutical ingredients.</p>
+            </div>
+            <a class="link-cta link-cta--on-accent" href="/contact.html" data-i18n="about.closing_cta">Contact us</a>
+          </div>
+          <div class="slide__photo"><img src="/assets/img/truck.jpg" alt="" loading="lazy" data-i18n-attr="alt:about.truck_alt"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--lg" id="team">
+      <div class="container stack stack--7">
+        <div class="section-head about-people__head">
+          <p data-reveal="fade" class="section-label t-accent about-people__label" data-i18n="about.people_label">Team</p>
+          <h2 data-reveal class="t-display t-accent" data-i18n-html="about.people_title">Meet the people<br>behind your supply</h2>
+        </div>
+        <div class="stack stack--grid" data-reveal-stagger>
+          <article class="people-card">
+            <img class="people-card__photo" src="/assets/img/people-markus.jpg" alt="" data-i18n-attr="alt:about.people_markus_name">
+            <div class="people-card__body">
+              <p class="t-lead" data-i18n-html="about.people_markus_quote">“Every order starts with a conversation. We listen first, then build the supply around your needs.”</p>
+              <div><div class="people-card__name" data-i18n="about.people_markus_name">Markus Weber</div><div class="people-card__role" data-i18n="about.people_markus_role">Managing Director</div></div>
+            </div>
+            <div class="people-card__contacts">
+              <a class="contact-line" href="tel:+494073128176"><span class="icon-ring"><svg class="icon icon-text" aria-hidden="true"><use href="/assets/icons/sprite.svg#phone"/></svg></span><span data-i18n="about.people_phone">+49 40 731 281 – 76</span></a>
+              <a class="contact-line" href="mailto:markus@osta-trading.com"><span class="icon-ring"><svg class="icon icon-text" aria-hidden="true"><use href="/assets/icons/sprite.svg#mail"/></svg></span><span data-i18n="about.people_markus_mail">markus@osta-trading.com</span></a>
+            </div>
+          </article>
+          <article class="people-card">
+            <img class="people-card__photo" src="/assets/img/people-thomas.jpg" alt="" data-i18n-attr="alt:about.people_thomas_name">
+            <div class="people-card__body">
+              <p class="t-lead" data-i18n-html="about.people_thomas_quote">“A reliable ingredient is only useful when it arrives on time. That is what we work on every day.”</p>
+              <div><div class="people-card__name" data-i18n="about.people_thomas_name">Thomas Keller</div><div class="people-card__role" data-i18n="about.people_thomas_role">Head of Sourcing</div></div>
+            </div>
+            <div class="people-card__contacts">
+              <a class="contact-line" href="tel:+494073128176"><span class="icon-ring"><svg class="icon icon-text" aria-hidden="true"><use href="/assets/icons/sprite.svg#phone"/></svg></span><span data-i18n="about.people_phone">+49 40 731 281 – 76</span></a>
+              <a class="contact-line" href="mailto:thomas@osta-trading.com"><span class="icon-ring"><svg class="icon icon-text" aria-hidden="true"><use href="/assets/icons/sprite.svg#mail"/></svg></span><span data-i18n="about.people_thomas_mail">thomas@osta-trading.com</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--lg section--flush-top" id="quality">
+      <div class="container">
+        <div class="feature-grid">
+          <div class="feature-grid__intro stack stack--5">
+            <div class="section-head about-quality__head">
+              <p data-reveal="fade" class="section-label t-accent about-quality__label" data-i18n="about.quality_label">Documentation</p>
+              <h2 data-reveal class="t-h2 t-accent about-quality__title" data-i18n-html="about.quality_title">Quality and compliance are fundamental to our operations</h2>
+            </div>
+            <p data-reveal data-reveal-delay="1" class="t-body about-quality__text" data-i18n="about.quality_text">This way we ensure appropriate handling, storage and distribution of pharmaceutical ingredients.</p>
+            <a data-reveal data-reveal-delay="2" class="btn btn--secondary btn--md btn--split about-quality__cta" href="/contact.html"><span data-i18n="about.quality_cta">Request documentation</span><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#arrow-up-right"/></svg></a>
+          </div>
+          <article data-reveal class="feature-card feature-card--accent">
+            <div class="feature-card__head">
+              <h3 class="t-h2 feature-card__title" data-i18n="about.quality_specs_title">Specs &amp; quality</h3>
+              
+            </div>
+            <div class="feature-card__art-wrap">
+              <svg class="feature-card__art" viewBox="0 -20.5 340 236" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path class="il-canvas" d="M170.0 42.0 L319.0 128.0 L170.0 214.0 L21.0 128.0 Z"/><path class="il-grid" d="M194.8 56.3 L45.9 142.3 M145.2 56.3 L294.1 142.3 M219.7 70.7 L70.7 156.7 M120.3 70.7 L269.3 156.7 M244.5 85.0 L95.5 171.0 M95.5 85.0 L244.5 171.0 M269.3 99.3 L120.3 185.3 M70.7 99.3 L219.7 185.3 M294.1 113.7 L145.2 199.7 M45.9 113.7 L194.8 199.7"/><path class="il-line il-dash" d="M157.9 83.0 L157.9 25.0 M247.9 135.0 L247.9 77.0 M182.1 173.0 L182.1 115.0 M92.1 121.0 L92.1 63.0"/><path class="il-occ" d="M157.9 70.0 L247.9 122.0 L247.9 125.0 L182.1 163.0 L92.1 111.0 L92.1 108.0 Z"/><path class="il-sheet" d="M157.9 70.0 L247.9 122.0 L182.1 160.0 L92.1 108.0 Z"/><path class="il-edge" d="M247.9 122.0 L247.9 125.0 L182.1 163.0 L92.1 111.0 L92.1 108.0"/><path class="il-edge" d="M182.1 160.0 L182.1 163.0"/><path class="il-line" d="M152.7 83.0 L211.6 117.0"/><path class="il-line" d="M140.6 90.0 L204.6 127.0"/><path class="il-line" d="M128.4 97.0 L197.7 137.0"/><path class="il-occ" d="M157.9 46.0 L247.9 98.0 L247.9 101.0 L182.1 139.0 L92.1 87.0 L92.1 84.0 Z"/><path class="il-sheet" d="M157.9 46.0 L247.9 98.0 L182.1 136.0 L92.1 84.0 Z"/><path class="il-edge" d="M247.9 98.0 L247.9 101.0 L182.1 139.0 L92.1 87.0 L92.1 84.0"/><path class="il-edge" d="M182.1 136.0 L182.1 139.0"/><path class="il-line" d="M152.7 59.0 L211.6 93.0"/><path class="il-line" d="M140.6 66.0 L204.6 103.0"/><path class="il-line" d="M128.4 73.0 L197.7 113.0"/><path class="il-fill" d="M157.9 22.0 L247.9 74.0 L247.9 77.0 L182.1 115.0 L92.1 63.0 L92.1 60.0 Z"/><path class="il-ink" d="M157.9 22.0 L247.9 74.0 L182.1 112.0 L92.1 60.0 Z"/><path class="il-ink" d="M247.9 77.0 L182.1 115.0 L92.1 63.0"/><path class="il-ink" d="M182.1 112.0 L182.1 115.0"/><path class="il-ink" d="M247.9 74.0 L247.9 77.0"/><path class="il-ink" d="M92.1 60.0 L92.1 63.0"/><path class="il-ink il-bold" d="M157.9 32.0 L180.4 45.0"/><path class="il-ink" d="M145.8 39.0 L197.7 69.0"/><path class="il-ink" d="M137.1 44.0 L185.6 72.0"/><path class="il-ink" d="M128.4 49.0 L173.5 75.0"/><path class="il-ink" d="M119.8 54.0 L142.3 67.0"/><path class="il-ink" d="M187.3 99.0 L185.6 99.9 L183.6 100.6 L181.5 101.1 L179.2 101.4 L176.9 101.5 L174.6 101.4 L172.4 101.1 L170.3 100.6 L168.3 99.9 L166.5 99.0 L165.0 98.0 L163.8 96.9 L163.0 95.6 L162.4 94.3 L162.2 93.0 L162.4 91.7 L163.0 90.4 L163.8 89.1 L165.0 88.0 L166.5 87.0 L168.3 86.1 L170.3 85.4 L172.4 84.9 L174.6 84.6 L176.9 84.5 L179.2 84.6 L181.5 84.9 L183.6 85.4 L185.6 86.1 L187.3 87.0 L188.8 88.0 L190.0 89.1 L190.9 90.4 L191.4 91.7 L191.6 93.0 L191.4 94.3 L190.9 95.6 L190.0 96.9 L188.8 98.0 Z"/><path class="il-ink il-bold" d="M170.9 89.5 L170.9 94.5 L189.9 93.5"/></svg>
+            </div>
+            <div class="feature-card__foot">
+              <p class="feature-card__text" data-i18n="about.quality_specs_text">OSTA Trading GmbH is registered in EudraGMDP as an API distributor.</p>
+            </div>
+          </article>
+          <article data-reveal data-reveal-delay="1" class="feature-card feature-card--light">
+            <div class="feature-card__head">
+              <h3 class="t-h2 feature-card__title" data-i18n="about.quality_gdp_title">GDP</h3>
+              
+            </div>
+            <div class="feature-card__art-wrap">
+              <svg class="feature-card__art" viewBox="-5.2 -17.5 340 236" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path class="il-canvas" d="M170.0 42.0 L319.0 128.0 L170.0 214.0 L21.0 128.0 Z"/><path class="il-grid" d="M194.8 56.3 L45.9 142.3 M145.2 56.3 L294.1 142.3 M219.7 70.7 L70.7 156.7 M120.3 70.7 L269.3 156.7 M244.5 85.0 L95.5 171.0 M95.5 85.0 L244.5 171.0 M269.3 99.3 L120.3 185.3 M70.7 99.3 L219.7 185.3 M294.1 113.7 L145.2 199.7 M45.9 113.7 L194.8 199.7"/><path class="il-edge" d="M164.8 69.0 L164.8 11.0"/><path class="il-edge" d="M241.0 113.0 L241.0 55.0"/><path class="il-sheet" d="M164.8 40.0 L241.0 84.0 L215.0 99.0 L138.8 55.0 Z"/><path class="il-sheet" d="M164.8 11.0 L241.0 55.0 L215.0 70.0 L138.8 26.0 Z"/><path class="il-occ" d="M165.2 50.2 L185.7 62.1 L185.7 84.1 L168.4 94.1 L147.9 82.2 L147.9 60.2 Z"/><path class="il-sheet" d="M165.2 50.2 L185.7 62.1 L168.4 72.1 L147.9 60.2 Z"/><path class="il-edge" d="M185.7 62.1 L185.7 84.1 L168.4 94.1 L147.9 82.2 L147.9 60.2"/><path class="il-edge" d="M168.4 72.1 L168.4 94.1"/><path class="il-occ" d="M188.3 63.6 L208.8 75.4 L208.8 97.4 L191.5 107.4 L171.0 95.6 L171.0 73.6 Z"/><path class="il-sheet" d="M188.3 63.6 L208.8 75.4 L191.5 85.4 L171.0 73.6 Z"/><path class="il-edge" d="M208.8 75.4 L208.8 97.4 L191.5 107.4 L171.0 95.6 L171.0 73.6"/><path class="il-edge" d="M191.5 85.4 L191.5 107.4"/><path class="il-occ" d="M211.4 76.9 L231.9 88.8 L231.9 110.8 L214.6 120.8 L194.1 108.9 L194.1 86.9 Z"/><path class="il-sheet" d="M211.4 76.9 L231.9 88.8 L214.6 98.8 L194.1 86.9 Z"/><path class="il-edge" d="M231.9 88.8 L231.9 110.8 L214.6 120.8 L194.1 108.9 L194.1 86.9"/><path class="il-edge" d="M214.6 98.8 L214.6 120.8"/><path class="il-occ" d="M165.2 21.2 L185.7 33.1 L185.7 55.1 L168.4 65.1 L147.9 53.2 L147.9 31.2 Z"/><path class="il-sheet" d="M165.2 21.2 L185.7 33.1 L168.4 43.1 L147.9 31.2 Z"/><path class="il-edge" d="M185.7 33.1 L185.7 55.1 L168.4 65.1 L147.9 53.2 L147.9 31.2"/><path class="il-edge" d="M168.4 43.1 L168.4 65.1"/><path class="il-occ" d="M211.4 47.9 L231.9 59.8 L231.9 81.8 L214.6 91.8 L194.1 79.9 L194.1 57.9 Z"/><path class="il-sheet" d="M211.4 47.9 L231.9 59.8 L214.6 69.8 L194.1 57.9 Z"/><path class="il-edge" d="M231.9 59.8 L231.9 81.8 L214.6 91.8 L194.1 79.9 L194.1 57.9"/><path class="il-edge" d="M214.6 69.8 L214.6 91.8"/><path class="il-edge" d="M215.0 128.0 L215.0 70.0"/><path class="il-edge" d="M138.8 84.0 L138.8 26.0"/><path class="il-occ" d="M163.1 140.0 L204.6 164.0 L204.6 170.0 L170.0 190.0 L128.4 166.0 L128.4 160.0 Z"/><path class="il-sheet" d="M163.1 140.0 L204.6 164.0 L170.0 184.0 L128.4 160.0 Z"/><path class="il-edge" d="M204.6 164.0 L204.6 170.0 L170.0 190.0 L128.4 166.0 L128.4 160.0"/><path class="il-edge" d="M170.0 184.0 L170.0 190.0"/><path class="il-fill" d="M163.1 102.0 L197.7 122.0 L197.7 164.0 L170.0 180.0 L135.4 160.0 L135.4 118.0 Z"/><path class="il-ink" d="M163.1 102.0 L197.7 122.0 L170.0 138.0 L135.4 118.0 Z"/><path class="il-ink" d="M197.7 164.0 L170.0 180.0 L135.4 160.0"/><path class="il-ink" d="M170.0 138.0 L170.0 180.0"/><path class="il-ink" d="M197.7 122.0 L197.7 164.0"/><path class="il-ink" d="M135.4 118.0 L135.4 160.0"/><path class="il-occ" d="M109.4 101.0 L131.9 114.0 L131.9 136.0 L111.1 148.0 L88.6 135.0 L88.6 113.0 Z"/><path class="il-sheet" d="M109.4 101.0 L131.9 114.0 L111.1 126.0 L88.6 113.0 Z"/><path class="il-edge" d="M131.9 114.0 L131.9 136.0 L111.1 148.0 L88.6 135.0 L88.6 113.0"/><path class="il-edge" d="M111.1 126.0 L111.1 148.0"/></svg>
+            </div>
+            <div class="feature-card__foot">
+              <p class="feature-card__text" data-i18n="about.quality_gdp_text">Our Hamburg warehouse operates in compliance with GDP requirements.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-closing">
+      <div class="container">
+       <div class="home-closing__panel">
+        <div class="home-closing__body" data-reveal="fade">
+          <p class="t-lead home-closing__sub" data-i18n="about.closing_sub">We would love to hear your challenge.</p>
+          <h2 class="t-display home-closing__title" data-i18n="about.closing_title">Professionalism, reliability and long-term cooperation are at the centre of everything we do</h2>
+          <p class="t-body home-closing__desc" data-i18n="about.closing_desc">Our knowledgeable and resourceful team will always assist you to find the answer you look for.</p>
+          <div class="home-closing__actions">
+            <a class="btn btn--light btn--lg btn--split" href="/contact.html"><span data-i18n="about.closing_cta">Contact us</span><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#arrow-up-right"/></svg></a>
+            <a class="btn btn--outline-on-accent btn--lg btn--split" href="/catalog.html"><span data-i18n="about.closing_cta_products">View products</span><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#arrow-up-right"/></svg></a>
+          </div>
+        </div>
+        <!-- closing scene: three.js converge lines (closing-lines.js), transparent canvas on the blue panel -->
+        <div class="home-closing__scene" data-closing-scene role="img" aria-label="Abstract lines converging into one point" data-i18n-attr="aria-label:closing.scene_label"></div>
+       </div>
+      </div>
+    </section>
+  </main>
+  <!--@include partials/footer.html-->
+</body>
+</html>

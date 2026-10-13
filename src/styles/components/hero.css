@@ -1,0 +1,38 @@
+/* Hero (AIDA): title (Attention) > subtitle (Interest) > facts row (Desire) > CTA link (Action) > full-bleed image. Tokens only. */
+.hero { padding-top: calc(var(--header-h) + var(--space-8)); background: var(--surface); text-align: center; }
+.hero__title { margin: 0; }
+.hero__sub { margin: var(--space-5) auto 0; color: var(--text-accent-subtle); }
+/* facts row on the 12-col grid: left 1-4 (start), CTA 5-8 (center), right 9-12 (end) */
+.hero__facts { display: grid; grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr)); column-gap: var(--grid-gap); align-items: center; margin-top: var(--space-7); }
+.hero__fact { margin: 0; color: var(--text-accent-subtle); white-space: nowrap; }
+.hero__fact--l { grid-column: 1 / span 4; text-align: left; }
+.hero__cta { grid-column: 5 / span 4; justify-self: center; }
+.hero__facts .hero__cta { font-size: var(--type-body-size); line-height: var(--type-body-lh); } /* same size as facts; beats .link-cta (body size) by specificity */
+.hero__fact--r { grid-column: 9 / span 4; text-align: right; }
+/* hero media block (all pages): full viewport width (edge-to-edge, no side gutters), border-block 1px --border-strong (same as .btn--ghost / inputs), no radius, no side borders */
+.hero__media { position: relative; box-sizing: border-box; width: 100%; margin: var(--space-7) 0 0; aspect-ratio: 16 / 7; max-height: 72vh; overflow: hidden; background: var(--surface-raised); border: 0; border-block: 1px solid var(--border-strong); border-radius: 0; }
+.hero__canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity var(--dur-slow) var(--ease-out); }
+.hero__canvas.is-ready { opacity: 1; }
+/* decorative 3D replaces the photo; the image stays as fallback (no JS, no WebGL, init failure) */
+.hero__image { display: none; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
+html:not(.js) .hero__image, .hero--no3d .hero__image { display: block; }
+@media (prefers-reduced-motion: reduce) { .hero__canvas { transition: none; } }
+
+/* Underlined text CTA: no fill, no arrow */
+.link-cta { color: var(--accent); font-size: var(--type-body-size); line-height: var(--type-body-lh); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .25em; transition: color var(--dur-base) var(--ease-out); }
+.link-cta:hover { color: var(--accent-hover); } /* underline stays 1px in every state (lines <= 1px) */
+.link-cta:focus-visible { outline: var(--focus-outline); outline-offset: var(--focus-offset); border-radius: var(--radius-sm); }
+.link-cta--on-accent, .link-cta--on-accent:hover { color: var(--text-on-accent); }
+.link-cta--on-accent:focus-visible { outline-color: var(--text-on-accent); }
+
+/* Hero, Home variant (.hero--home): the entry point of the site, its own composition (not the centred About/Services hero).
+   Row 1 (12-col grid): H1 t-display cols 1-8 left-aligned, the one primary button LEFT under it (cols 1-6, --space-7 gap).
+   Then (own .container): the four short facts (.hero__points: icon ring B 40 + t-body) cols 1-3 / 4-6 / 7-9 / 10-12 under a 1px --border line, at the BOTTOM of the block. Right part (cols 9-12): decorative transparent three.js scene `.hero__scene` (fiber pill: lines sphere <-> capsule, colour token --accent), height = H1 + CTA block, no frame/background. */
+.hero--home { text-align: left; padding-bottom: var(--section-sm); display: flex; flex-direction: column; justify-content: space-between; min-height: 100vh; min-height: 100svh; }
+.hero--home > .container { width: 100%; }
+.hero--home .hero__grid { display: grid; grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr)); column-gap: var(--grid-gap); align-items: end; }
+.hero--home .hero__title { grid-column: 1 / span 8; grid-row: 1; }
+.hero__scene { grid-column: 9 / span 4; grid-row: 1 / span 2; align-self: stretch; position: relative; min-height: 0; } /* decorative three.js scene (home-hero-pill.js), transparent canvas, no frame; height = H1 + CTA block */
+.hero__aside { grid-column: 1 / span 6; grid-row: 2; margin-top: var(--space-7); display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-6); }
+.hero__points { display: grid; grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr)); column-gap: var(--grid-gap); margin: var(--space-7) 0 0; padding: var(--space-5) 0 0; list-style: none; border-top: 1px solid var(--border); }
+.hero__point { grid-column: span 3; display: flex; align-items: center; gap: var(--space-4); min-width: 0; color: var(--text-accent-subtle); }

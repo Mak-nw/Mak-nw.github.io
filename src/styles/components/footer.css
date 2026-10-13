@@ -1,0 +1,31 @@
+.footer { background: var(--surface-sunken); color: var(--text-accent); }
+.footer__top { container-type: inline-size; display: grid; grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr)); column-gap: var(--grid-gap); grid-template-rows: auto 1fr auto; align-items: start; padding-top: var(--space-8); font-size: var(--type-body-size); line-height: var(--type-body-lh); }
+.footer__menu { grid-column: 1 / span 6; grid-row: 1 / span 2; justify-self: start; width: max-content; max-width: calc(12.5cqw - 14px); display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; }
+/* Три списки стоять в одній комірці (ширина = найширший за вмістом W, рівна для всіх) і зсунуті: Products x=32, About = лівa межа col 4 (x4-32 = 25cqw + 4px), Services рівно посередині (гапи рівні). max-width: gap >= 16px, інакше довгі пункти переносяться. */
+.footer__menu > .footer__group { grid-area: 1 / 1; position: relative; }
+.footer__menu > .footer__group:nth-child(2) { left: calc(12.5cqw + 2px); }
+.footer__menu > .footer__group:nth-child(3) { left: calc(25cqw + 4px); }
+.footer__group { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+.footer__group .footer__label { margin-bottom: var(--space-1); }
+.footer__contacts { grid-column: 1 / -1; grid-row: 3; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--grid-gap); margin: var(--space-9) 0 0; }
+.footer__cta { grid-column: 7 / span 4; grid-row: 2; justify-self: start; margin-top: var(--space-7); }
+.footer__col { display: contents; }
+.footer__mission { grid-column: 7 / span 4; grid-row: 1; margin: 0; color: var(--text-accent); font-size: var(--type-lead-size); line-height: var(--type-lead-lh); letter-spacing: var(--type-lead-ls); }
+/* >1280: місія на cols 7–10 (зсув на 2 cols ліворуч, коментар замовника), CTA на тому ж start (cols 7, ліва межа = ліва межа місії). ≤1280: абзац місії (24px) і CTA беруть cols 7–12, щоб рядок не був ~30 символів; меню cols 1–4 — без перетину (місія тут не зсувається: cols 5+ перетнули б меню) */
+@media (max-width: 1280px) {
+  .footer__mission, .footer__cta { grid-column: 7 / span 6; }
+}
+.footer__row { display: flex; flex-direction: column; gap: var(--space-2); }
+.footer__row { min-width: 0; }
+.footer__row dd { margin: 0; overflow-wrap: anywhere; }
+.footer__label { display: block; margin-bottom: var(--space-1); font-size: var(--type-label-size); line-height: var(--type-label-lh); letter-spacing: var(--type-label-ls); color: var(--text); }
+.footer__row .footer__label { margin-bottom: 0; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+.footer address { font-style: normal; }
+/* Hover лінків футера; кнопки .btn (CTA «Contact manager») виключені — їх hover задає .btn--primary:hover */
+.footer a:not(.btn):not(.footer__wordmark):hover,
+.footer a.is-hover:not(.btn):not(.footer__wordmark) { color: var(--accent); text-decoration: underline; }
+/* Giant wordmark: font-size is a fraction of the container's inline size (cqw), so "OSTA" always spans the 12-col width. */
+.footer__wordmark { display: block; container-type: inline-size; margin-top: var(--space-9); }
+.footer__wordmark:hover { text-decoration: none; }
+.footer__wordmark span { display: block; font-weight: var(--font-weight-medium); font-size: calc(100cqw * var(--wordmark-k)); line-height: 0.8; letter-spacing: -0.04em; color: var(--accent); white-space: nowrap; margin-left: -0.05em; }
+.footer__copy { margin: 0; padding-block: var(--space-5) var(--space-6); text-align: center; font-size: var(--type-label-size); line-height: var(--type-label-lh); color: var(--text-accent); }

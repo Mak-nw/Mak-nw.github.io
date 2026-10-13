@@ -1,0 +1,28 @@
+/* Product page: only token-based page layout. */
+/* content in the 8 central columns (3-10) of the 12-col page grid */
+.product-hero__inner { display: grid; grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr)); column-gap: var(--grid-gap); row-gap: var(--space-5); }
+.product-hero__inner > * { grid-column: 3 / span 8; min-width: 0; }
+.product-hero__inner > .breadcrumbs, .product-hero__inner > [data-product-tags] { justify-content: center; flex-wrap: wrap; }
+/* info tiles: 2 per row (4 of the 8 central columns each), equal height in a row, CTA tile full width below */
+.product-info { width: 100%; justify-self: stretch; margin-top: var(--space-6); display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: var(--grid-gap); align-items: stretch; }
+.product-info > .info-card { grid-column: span 4; }
+.product-info [hidden] { display: none; }
+.product-info .info-card > div { min-width: 0; }
+.product-info .info-card__value { overflow-wrap: anywhere; }
+/* CTA tile: text left, illustration centred, round button right */
+.product-info > .cta-block { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-areas: "title art btn" "text art btn"; align-items: start; color: var(--text-on-accent); }
+.cta-block__title { grid-area: title; }
+.cta-block__foot { display: contents; }
+.cta-block__text { grid-area: text; align-self: end; }
+.cta-block__foot .round-btn { grid-area: btn; justify-self: end; align-self: end; }
+.cta-block__art { grid-area: art; position: relative; align-self: stretch; min-height: 0; }
+.cta-block__art-svg { --il-bg: var(--surface-accent); --il-fill: var(--c-white); --il-ink: var(--surface-accent); --il-soft: var(--c-blue-200); --il-canvas: var(--c-blue-400); --il-grid: var(--c-blue-500);
+  position: absolute; inset: 0; width: 100%; height: 100%; stroke-width: 1px; }
+.cta-block__art-svg .il-occ { fill: var(--il-bg); stroke: none; }
+.cta-block__art-svg .il-fill { fill: var(--il-fill); stroke: none; }
+.cta-block__art-svg .il-ink { stroke: var(--il-ink); }
+.cta-block__art-svg .il-bold { stroke-width: 1.25px; }
+.cta-block__art-svg .il-canvas { stroke: var(--il-canvas); }
+.cta-block__art-svg .il-grid { stroke: var(--il-grid); stroke-width: 0.75px; stroke-dasharray: 2 3; }
+.cta-block__art-svg .il-dash { stroke-dasharray: 2 3; stroke-width: 0.75px; }
+.cta-block__art-svg .il-edge, .cta-block__art-svg .il-sheet, .cta-block__art-svg .il-line { stroke: var(--il-soft); }

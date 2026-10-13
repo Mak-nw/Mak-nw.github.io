@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!--@include partials/head.html-->
+  <title>Products | OSTA Trading GmbH</title>
+  <link rel="stylesheet" href="/src/styles/pages/catalog.css">
+  <script type="module" src="/src/pages/catalog.js"></script>
+</head>
+<body data-page="products">
+  <!--@include partials/header.html-->
+  <main class="section--sm">
+    <div class="container">
+      <div class="layout-catalog">
+        <aside class="layout-catalog__sidebar">
+          <div class="stack stack--4">
+            <h1 data-reveal-load="0" class="t-h1 t-accent" data-i18n="catalog.title">Products</h1>
+            <div data-reveal-load="1" class="search">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#search"/></svg>
+              <input class="input input--md" type="search" id="catalog-search" autocomplete="off" placeholder="Search by Name" data-i18n-attr="placeholder:catalog.search_placeholder;aria-label:catalog.search_placeholder">
+            </div>
+            <span class="t-label t-muted" data-i18n="catalog.categories">Categories</span>
+            <div class="filter-list" id="catalog-filters">
+              <button class="filter-item is-active" type="button" data-category="all"><svg class="icon icon-text" aria-hidden="true"><use href="/assets/icons/sprite.svg#grid"/></svg><span data-i18n="catalog.cat_all">All</span></button>
+              <button class="filter-item" type="button" data-category="api"><svg class="icon icon-text" aria-hidden="true"><use href="/assets/icons/sprite.svg#molecule"/></svg><span data-i18n="catalog.cat_api">API</span></button>
+              <button class="filter-item" type="button" data-category="excipients"><svg class="icon icon-text" aria-hidden="true"><use href="/assets/icons/sprite.svg#puzzle"/></svg><span data-i18n="catalog.cat_excipients">Excipients</span></button>
+              <button class="filter-item" type="button" data-category="food-grade"><svg class="icon icon-text" aria-hidden="true"><use href="/assets/icons/sprite.svg#leaf"/></svg><span data-i18n="catalog.cat_food">Food Grade</span></button>
+            </div>
+            <p class="t-body t-muted" id="catalog-count"></p>
+          </div>
+          <div data-reveal="fade" class="card help-card catalog__help">
+            <p class="help-card__text" data-i18n="catalog.help_text">Can't find the product you're looking for?</p>
+            <a class="btn btn--primary btn--md" href="/contact.html"><span data-i18n="common.chat_with_manager">Chat with manager</span> <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#arrow-up-right"/></svg></a>
+          </div>
+        </aside>
+        <section class="catalog__results" aria-live="polite">
+          <div class="grid-3" id="catalog-grid"></div>
+          <button class="btn btn--primary btn--md catalog__more" type="button" id="catalog-more" hidden><span data-i18n="catalog.show_more">Show more</span></button>
+          <div class="card card--pad-lg catalog__empty" id="catalog-empty" hidden>
+            <h2 class="t-h2 t-accent" data-i18n="catalog.empty">No products found</h2>
+            <p class="t-body t-muted" data-i18n="catalog.empty_text">Try another name or category, or ask our manager.</p>
+            <a class="btn btn--primary btn--md" href="/contact.html"><span data-i18n="common.chat_with_manager">Chat with manager</span> <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#arrow-up-right"/></svg></a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <!--@include partials/footer.html-->
+</body>
+</html>

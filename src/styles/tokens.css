@@ -1,0 +1,131 @@
+/* ==========================================================================
+   OSTA design tokens. Single source of truth: no raw values outside this file.
+   Layers: 1) raw palette  2) semantic roles  3) scales (space, type, radius,
+   size, focus, layout, motion).
+   ========================================================================== */
+
+/* ---- Fonts: Asta Sans (Light 300 / Regular 400 / Medium 500 only) ---- */
+@font-face { font-family: 'Asta Sans'; font-weight: 300; font-style: normal; font-display: swap;
+  src: url('/assets/fonts/AstaSans-Light.woff2') format('woff2'); }
+@font-face { font-family: 'Asta Sans'; font-weight: 400; font-style: normal; font-display: swap;
+  src: url('/assets/fonts/AstaSans-Regular.woff2') format('woff2'); }
+@font-face { font-family: 'Asta Sans'; font-weight: 500; font-style: normal; font-display: swap;
+  src: url('/assets/fonts/AstaSans-Medium.woff2') format('woff2'); }
+
+:root {
+  /* ---------- 1. Raw palette ---------- */
+  --c-blue-950: #061f52;
+  --c-blue-800: #082b66;
+  --c-sky-supply: #04328a;   /* виміряно з верху services-supply-drone.jpg; змінити разом із фото */
+  --c-blue-700: #0a3782;   /* accent (customer) */
+  --c-blue-600: #1d4a96;
+  --c-blue-500: #3a64a0;   /* 5.1:1 on --surface, 5.6:1 on hero (#F5F9FA); small text on light */
+  --c-blue-400: #5a78ae;   /* 3.8:1 on --surface, 4.2:1 on hero; large text (>=24px) only */
+  --c-blue-200: #a9b7d2;
+  --c-mist-200: #dfe5e8;
+  --c-mist-100: #e8eeee;   /* light (customer) */
+  --c-mist-50:  #f4f9f9;
+  --c-mist-25:  #f7fafa;
+  --c-teal-600: #3e7b85;
+  --c-grey-500: #6f7e82;
+  --c-grey-600: #566265;   /* muted text (darker step of grey-500 for 4.5:1+ on all surfaces) */
+  --c-ink-900:  #080d17;   /* text (customer) */
+  --c-white:    #ffffff;
+  --c-red-700:  #b3261e;   /* error; 5.5:1 on --surface, 6.5:1 on white */
+
+  /* ---------- 2. Semantic roles (use ONLY these in components) ---------- */
+  --surface:          var(--c-mist-100);   /* page background */
+  --shader-line:      color-mix(in srgb, var(--surface) 86%, var(--c-blue-700));   /* isolines of the Product WebGL background (decorative, low contrast) */
+  --surface-raised:   var(--c-mist-50);    /* cards on page */
+  --surface-sunken:   var(--c-mist-25);    /* footer, hero, quiet areas */
+  --surface-muted:    var(--c-mist-200);   /* people card, disabled fills */
+  --surface-white:    var(--c-white);      /* nav-pills, raised-on-raised */
+  --surface-accent:   var(--c-blue-700);
+  --surface-dark:     var(--c-blue-950);
+  --text:             var(--c-ink-900);
+  --text-muted:       var(--c-grey-600);   /* ≥4.7:1 on #E8EEEE, #F4F9F9, white and the darkest shader pixel rgb(216,224,231) */
+  --text-accent:      var(--c-blue-700);
+  --text-accent-soft: var(--c-blue-400);   /* large text only (>=24px, 3:1+): second half of lead sentences */
+  --text-accent-subtle: var(--c-blue-500); /* small text on light surfaces (>=4.5:1): meta labels */
+  --text-on-accent:   var(--c-white);
+  --text-on-accent-muted: color-mix(in srgb, var(--c-white) 62%, transparent);
+  --accent:           var(--c-blue-700);
+  --accent-hover:     var(--c-blue-800);
+  --accent-active:    var(--c-blue-950);
+  --accent-contrast:  var(--c-white);
+  --border:           color-mix(in srgb, var(--c-blue-700) 14%, transparent);
+  --border-strong:    var(--c-blue-400);   /* form/ghost borders, 3.8:1 on --surface */
+  --divider-on-accent: color-mix(in srgb, var(--c-white) 14%, transparent); /* decorative hairlines between service cards */
+  --border-on-accent: color-mix(in srgb, var(--c-white) 40%, transparent);
+  --icon-teal:        var(--c-teal-600);
+  --disabled-bg:      var(--c-mist-200);
+  --disabled-text:    var(--c-grey-500);
+  --c-error:          var(--c-red-700);   /* validation error: one shade for text, border, icon */
+  --text-error:       var(--c-error);
+  --border-error:     var(--c-error);
+  --overlay-field:    color-mix(in srgb, var(--c-white) 14%, transparent); /* inputs on accent */
+
+  /* ---------- 3a. Spacing (4/8 step) ---------- */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --space-9: 96px; --space-10: 128px;
+
+  /* ---------- 3b. Typography ---------- */
+  --font-sans: 'Asta Sans', system-ui, sans-serif;
+  --font-weight-light: 300; --font-weight-regular: 400; --font-weight-medium: 500;
+  /* role: size / line-height / weight / letter-spacing */
+  /* Scale: 14 / 16 / 24 / 40 / 48 / 80 (one token per size; role -> token table in design-system.md) */
+  --type-display-size: 80px; --type-display-lh: 80px; --type-display-ls: -0.04em;   /* hero H1, section sentence heading */
+  --type-h1-size: 48px;      --type-h1-lh: 56px;      --type-h1-ls: -0.02em;        /* H1 of inner pages */
+  --type-h2-size: 40px;      --type-h2-lh: 40px;      --type-h2-ls: -0.04em;        /* card / block / step heading, closing heading (the only 40px token) */
+  --type-h3-size: 24px;      --type-h3-lh: 32px;      --type-h3-ls: -0.01em;        /* item title in dense lists; lead (same values, lead is Regular) */
+  --type-lead-size: var(--type-h3-size); --type-lead-lh: var(--type-h3-lh); --type-lead-ls: var(--type-h3-ls); /* alias of h3 values: one token per size */
+  --type-body-size: 16px;    --type-body-lh: 24px;    --type-body-ls: 0;
+  --type-label-size: 14px;   --type-label-lh: 20px;   --type-label-ls: 0;
+
+  /* ---------- 3c. Radii (role based) ---------- */
+  --radius-sm: 4px;     /* smallest rounding: tiny inner elements */
+  --radius-md: 6px;     /* rectangular controls: buttons, nav links, chips, inputs, search, filter items */
+  --radius-lg: 8px;     /* surfaces: cards, panels, photos, CTA blocks, header panel */
+  --radius-full: 50%;   /* true circles only: round buttons, slider arrows, icon chips, avatars, dots */
+
+  /* ---------- 3d. Control sizes (3 heights) ---------- */
+  --control-sm: 32px; --control-md: 44px; --control-lg: 56px;
+  --icon-sm: 16px; --icon-md: 20px; --icon-lg: 24px;
+  --chip-sm: 24px; --chip-md: 32px; --chip-lg: 40px;   /* decorative icon chips */
+  --btn-split-w: 176px;        /* Contact Us style button (label left, icon right) */
+  --btn-pad-trim: 5px;         /* .btn right padding = left padding − this (icon sits 5px closer to the right edge); symmetric when no icon */
+  --wordmark-k: 0.15137; /* footer wordmark "OSTA TRADING": font-size = container width x k (cqw); ink width = 6.606 em */
+  --logo-footer-w: 320px; --logo-header-h: 44px;
+  --card-min-h: 240px; --card-tall-min-h: 252px; --card-cta-min-h: 176px;
+  --avatar-sm: 48px; --avatar-md: 64px; --avatar-lg: 96px;
+
+  /* ---------- 3e. Focus (outline only; the system has no shadows) ---------- */
+  --focus-w: 1px;
+  --focus-offset: 2px;
+  --focus-outline: var(--focus-w) solid var(--accent);
+
+  /* ---------- 3f. Layout ---------- */
+  --container: 1680px;          /* main content box */
+  --gutter: 32px;               /* side padding of container */
+  --grid-cols: 12;
+  --grid-gap: 16px;
+  --sidebar-w: 240px;
+  --header-top: var(--space-3);                                   /* gap above the floating panel */
+  --header-bar-pad: 10px;        /* vertical gap between panel edge and its md controls / logo */
+  --header-bar-h: calc(var(--control-md) + 2 * var(--header-bar-pad)); /* 64: floating panel height (md control 44 + 10 above/below) */
+  --header-w: 760px;                                             /* floating panel max width (centered) */
+  --header-h: calc(var(--header-top) + var(--header-bar-h));      /* space taken by sticky header = top gap + panel (76) */
+  --z-header: 100;               /* sticky header; no z-index scale existed before */
+  --section-sm: var(--space-8);   /* 64 */
+  --section-md: var(--space-9);   /* 96 */
+  --section-lg: var(--space-10);  /* 128 */
+  --bp-min: 1200px;               /* working range 1200-1920 */
+
+  /* ---------- 3g. Motion ---------- */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 150ms; --dur: 200ms;
+  --dur-base: 250ms; --dur-slow: 600ms;
+  --ease-out: cubic-bezier(.22,.61,.36,1); --ease-in-out: cubic-bezier(.65,0,.35,1);
+  --reveal-distance: 16px; --stagger: 60ms;
+}

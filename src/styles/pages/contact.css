@@ -1,0 +1,48 @@
+/* Contact page: split layout (photo panel + light content). Components come from the design system. */
+/* Full-bleed 12-col grid: [left screen margin] + 12 columns (same width/gap as .container) + [right margin]. Side tracks = gutter minus one gap (the grid gap is added back), so column k matches the page grid exactly. */
+.contact-split {
+  display: grid; align-items: start; column-gap: var(--grid-gap);
+  grid-template-columns:
+    minmax(calc(var(--gutter) - var(--grid-gap)), 1fr)
+    repeat(var(--grid-cols), minmax(0, calc((var(--container) - (var(--grid-cols) - 1) * var(--grid-gap)) / var(--grid-cols))))
+    minmax(calc(var(--gutter) - var(--grid-gap)), 1fr);
+  grid-template-rows: calc(var(--header-h) + var(--space-8)) repeat(4, auto) var(--space-8);
+}
+.contact-split__body, .contact-split__content { display: contents; }
+
+/* Photo panel: left screen edge to end of column 4, starts at y=0 under the floating header, sticky */
+.contact-split__media { grid-column: 1 / span 5; grid-row: 1 / -1; position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.contact-split__media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Headings: columns 5-7 (lines 6-9); content: columns 8-12 (lines 9-14) */
+.contact-split__title { grid-column: 6 / span 3; grid-row: 2; }
+.contact-info { grid-column: 9 / span 5; grid-row: 2; }
+.contact-split__rule { grid-column: 6 / 14; grid-row: 3; width: 100%; margin: var(--space-8) 0; border: 0; border-top: 1px solid var(--border); }
+.contact-split__form-head { grid-column: 6 / span 3; grid-row: 4; } /* .section-head: tag above the form heading */
+.contact-form { grid-column: 9 / span 5; grid-row: 4 / span 2; display: flex; flex-direction: column; gap: var(--space-6); }
+
+/* Label -> value rows */
+.contact-row { display: flex; flex-direction: column; gap: var(--space-1); }
+.contact-row dd { margin: 0; }
+.contact-link { transition: color var(--dur) var(--ease); }
+.contact-link:hover { color: var(--text-accent); }
+
+/* Managers: plain text blocks, no cards */
+.contact-people { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--grid-gap); }
+.contact-person { display: flex; flex-direction: column; gap: var(--space-1); min-width: 0; }
+.contact-person .t-label { margin-bottom: var(--space-2); }
+.contact-person__link { display: flex; align-items: center; gap: var(--space-3); color: var(--text); overflow-wrap: anywhere; transition: color var(--dur) var(--ease); }
+.contact-person__link:hover { color: var(--text-accent); }
+
+/* Form layout and status */
+.contact-form__row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--grid-gap); }
+.contact-form [data-field] { min-width: 0; }
+.contact-form__actions { display: flex; }
+.contact-form__status {
+  display: flex; align-items: flex-start; gap: var(--space-2); padding: var(--space-4);
+  border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface-raised);
+  font-size: var(--type-body-size); line-height: var(--type-body-lh);
+}
+.contact-form__status .icon { color: var(--accent); }
+.contact-form__status[hidden] { display: none; }
+.contact-form .btn[disabled] { pointer-events: none; }

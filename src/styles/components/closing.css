@@ -1,0 +1,24 @@
+/* Closing CTA (.home-closing*): Home, About, Services (shared).
+   Full-width light section (--surface) holding a BLUE panel (--surface-accent) inset by --gutter (the .container edge, same ruler as every block), corners --radius-lg (card radius).
+   Inside: centred AIDA text on top (white), three.js converge-lines scene edge to edge below, clipped by the panel corners */
+.home-closing { background: var(--surface); padding-top: var(--section-sm); padding-bottom: var(--space-8); }
+.home-closing__panel { background: var(--surface-accent); color: var(--text-on-accent); border-radius: var(--radius-lg); overflow: hidden; padding-top: var(--section-lg); }
+.home-closing__body { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-4); max-width: calc((100% - 11 * var(--grid-gap)) * 10 / 12 + 9 * var(--grid-gap)); margin-inline: auto; } /* exactly 10 of 12 grid cols (2-11), centred: width = 10 cols + 9 gaps; the t-display 80px heading needs the width */
+.home-closing__body h2, .home-closing__body p { margin: 0; }
+.home-closing__body h2, .home-closing__body p { color: var(--text-on-accent); }
+.home-closing__body .home-closing__sub { margin-bottom: calc(-1 * var(--space-1)); } /* sub-head above the headline: tighter gap (--space-3 total) */
+.home-closing__actions { display: flex; flex-wrap: wrap; justify-content: center; column-gap: var(--space-4); row-gap: var(--space-3); margin-top: var(--space-4); }
+/* Scene (closing-lines.js, three.js converge lines): transparent canvas on the blue panel, strokes --accent-contrast; edge to edge below the buttons, clipped by the panel corners.
+   No WebGL -> the script hides it ([hidden]) and the panel ends after the buttons with the bottom padding --space-8 */
+.home-closing__scene { position: relative; aspect-ratio: 4 / 1; width: 100%; margin-top: var(--space-5); }
+.home-closing__canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity var(--dur-slow) var(--ease-out); }
+.home-closing__canvas.is-ready { opacity: 1; }
+.home-closing__scene[hidden] { display: none; }
+.home-closing__panel:has(.home-closing__scene[hidden]) { padding-bottom: var(--space-8); }
+@media (prefers-reduced-motion: reduce) { .home-closing__canvas { transition: none; } }
+/* Secondary button on the blue panel: outline (white 1px border, transparent fill, white text); hover = the primary light look (white fill, blue text) */
+.home-closing__actions .btn--outline-on-accent { background: transparent; color: var(--text-on-accent); border-color: var(--accent-contrast); }
+.home-closing__actions .btn--outline-on-accent:hover,
+.home-closing__actions .btn--outline-on-accent.is-hover { background: var(--surface-white); color: var(--accent); }
+.home-closing__actions .btn--outline-on-accent:active,
+.home-closing__actions .btn--outline-on-accent.is-pressed { background: var(--surface-muted); color: var(--accent); transform: translateY(1px); }

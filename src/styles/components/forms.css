@@ -1,0 +1,102 @@
+/* Fields: .field > .field__label + (.input|.select|.textarea) [+ .field__error].
+   DEFAULT = line field (transparent, bottom border only). Pill variant (.field--pill / .input--pill / .search .input)
+   is the old filled control: use it only for compact search/filter inputs and for forms on an accent card (.field--on-accent). */
+.field { display: flex; flex-direction: column; gap: var(--space-1); }
+.field__label { font-size: var(--type-label-size); line-height: var(--type-label-lh); letter-spacing: var(--type-label-ls); color: var(--text-muted); transition: color var(--dur) var(--ease); }
+.field:focus-within .field__label { color: var(--text-accent); }
+.field--on-accent .field__label, .field--on-accent:focus-within .field__label { color: var(--text-on-accent); }
+
+/* ---- Line field (default). Height md = 44; --sm 32, --lg 56 ---- */
+.input, .select, .textarea {
+  --_h: var(--control-md);
+  width: 100%; height: var(--_h); padding-inline: 0; padding-block: 0;
+  background: transparent; color: var(--text);
+  border: 0; border-bottom: 1px solid var(--border-strong); border-radius: 0;
+  font-size: var(--type-body-size); line-height: var(--type-body-lh);
+  outline: 1px solid transparent; /* visible only in forced-colors mode */
+  appearance: none;
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.input--sm, .select--sm { --_h: var(--control-sm); font-size: var(--type-body-size); }
+.input--lg, .select--lg { --_h: var(--control-lg); }
+.input::placeholder, .textarea::placeholder { color: var(--text-muted); opacity: 1; }
+.input:hover,
+.select:hover,
+.textarea:hover,
+.input.is-hover,
+.select.is-hover,
+.textarea.is-hover { border-bottom-color: var(--text); }
+/* Focus: no ring; the 1px bottom line turns accent (colour change only) */
+.input:focus,
+.select:focus,
+.textarea:focus,
+.input:focus-visible,
+.select:focus-visible,
+.textarea:focus-visible,
+.input.is-focus,
+.select.is-focus,
+.textarea.is-focus { border-bottom-color: var(--accent); outline-color: transparent; }
+.input:disabled, .select:disabled, .textarea:disabled { background: transparent; color: var(--disabled-text); border-bottom-style: dashed; border-bottom-color: var(--border); cursor: not-allowed; }
+.textarea { height: auto; min-height: calc(2 * var(--control-lg)); padding-block: var(--space-3); resize: none; }
+
+/* Error: red line (1px, colour) + message; set by .is-invalid on .field or aria-invalid on the control */
+.field.is-invalid .input, .field.is-invalid .select, .field.is-invalid .textarea,
+.input[aria-invalid="true"], .select[aria-invalid="true"], .textarea[aria-invalid="true"] { border-bottom-color: var(--border-error); }
+.field.is-invalid .field__label, .field.is-invalid:focus-within .field__label { color: var(--text-error); }
+.field__error {
+  display: flex; align-items: flex-start; gap: var(--space-2); margin-top: var(--space-1);
+  font-size: var(--type-body-size); line-height: var(--type-body-lh); color: var(--text-error);
+}
+.field__error[hidden] { display: none; }
+.field__error .icon { margin-top: var(--space-1); }
+
+/* ---- Pill field (old filled control): .field--pill, or .input--pill on a bare input ---- */
+.field--pill .input, .field--pill .select, .field--pill .textarea,
+.input--pill, .select--pill, .textarea--pill,
+.search .input {
+  --_h: var(--control-lg);
+  padding-inline: var(--space-5);
+  background: var(--surface-white); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-md);
+}
+.field--pill .input--sm, .field--pill .select--sm, .search .input--sm { --_h: var(--control-sm); padding-inline: var(--space-3); font-size: var(--type-body-size); }
+.field--pill .input--md, .field--pill .select--md, .search .input--md { --_h: var(--control-md); padding-inline: var(--space-4); font-size: var(--type-body-size); }
+.field--pill .input:hover, .field--pill .select:hover, .field--pill .textarea:hover,
+.field--pill .input.is-hover, .field--pill .select.is-hover, .field--pill .textarea.is-hover,
+.input--pill:hover, .search .input:hover, .search .input.is-hover { border-color: var(--border-strong); }
+.field--pill .input:focus, .field--pill .select:focus, .field--pill .textarea:focus,
+.field--pill .input.is-focus, .field--pill .select.is-focus, .field--pill .textarea.is-focus,
+.input--pill:focus, .search .input:focus, .search .input.is-focus { border-color: var(--accent); outline: var(--focus-outline); outline-offset: var(--focus-offset); }
+.field--pill .input:disabled, .field--pill .select:disabled, .field--pill .textarea:disabled,
+.search .input:disabled { background: var(--disabled-bg); color: var(--disabled-text); border-style: solid; border-color: var(--border); }
+.field--pill .textarea { height: auto; min-height: calc(2 * var(--control-lg)); padding-block: var(--space-4); border-radius: var(--radius-md); resize: vertical; }
+
+/* Pill on accent background: translucent fields */
+.field--pill.field--on-accent .input, .field--pill.field--on-accent .select, .field--pill.field--on-accent .textarea {
+  background: var(--overlay-field); color: var(--text-on-accent); border-color: var(--border-on-accent);
+}
+.field--pill.field--on-accent .input::placeholder, .field--pill.field--on-accent .textarea::placeholder { color: var(--text-on-accent-muted); }
+.field--pill.field--on-accent .input:hover, .field--pill.field--on-accent .select:hover, .field--pill.field--on-accent .textarea:hover,
+.field--pill.field--on-accent .input.is-hover, .field--pill.field--on-accent .select.is-hover, .field--pill.field--on-accent .textarea.is-hover { border-color: var(--text-on-accent); }
+.field--pill.field--on-accent .input:focus, .field--pill.field--on-accent .select:focus, .field--pill.field--on-accent .textarea:focus,
+.field--pill.field--on-accent .input.is-focus, .field--pill.field--on-accent .select.is-focus, .field--pill.field--on-accent .textarea.is-focus { border-color: var(--text-on-accent); outline: var(--focus-w) solid var(--text-on-accent); outline-offset: var(--focus-offset); }
+.field--pill.field--on-accent .input:disabled, .field--pill.field--on-accent .select:disabled, .field--pill.field--on-accent .textarea:disabled { background: transparent; color: var(--text-on-accent-muted); border-style: dashed; }
+.field--on-accent .select option { color: var(--text); }
+
+/* Select with chevron (line: bare icon at the right end of the line; pill: icon in a ring) */
+.select-wrap { position: relative; }
+.select { padding-right: var(--chip-md); cursor: pointer; }
+.select:invalid { color: var(--text-muted); } /* empty placeholder option reads as placeholder */
+.select option { color: var(--text); }
+.select-wrap__chevron {
+  position: absolute; right: 0; top: 50%; translate: 0 -50%;
+  width: var(--chip-md); height: var(--chip-md); display: grid; place-items: center;
+  pointer-events: none; color: var(--accent);
+}
+.field--pill .select { padding-right: calc(var(--space-5) + var(--chip-lg)); }
+.field--pill .select-wrap__chevron { right: var(--space-3); border: 1px solid currentColor; border-radius: var(--radius-full); }
+.field--on-accent .select-wrap__chevron { color: var(--text-on-accent); }
+
+/* Search (pill): .search > .icon + .input */
+.search { position: relative; }
+.search .icon { position: absolute; left: var(--space-3); top: 50%; translate: 0 -50%; color: var(--accent); pointer-events: none; }
+.search .input { padding-left: calc(var(--space-3) + var(--icon-sm) + var(--space-2)); background: var(--surface-raised); }

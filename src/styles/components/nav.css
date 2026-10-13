@@ -1,0 +1,111 @@
+/* Header (floating panel), nav-pill, language switch */
+/* Header: sticky wrapper is transparent; compact white floating panel (--header-w, centered) carries surface + 1px border */
+.header { position: sticky; top: 0; z-index: var(--z-header); height: 0; overflow: visible; background: transparent; pointer-events: none; }
+/* Header takes no space in flow: first block of each page reserves --header-h itself (hero/contact start at y=0 under the panel) */
+.header + main { padding-top: var(--header-h); }
+.header + main.section--sm { padding-top: calc(var(--header-h) + var(--section-sm)); }
+.header + main:has(> .hero:first-child),
+.header + main.contact-split { padding-top: 0; }
+.header__panel {
+  pointer-events: auto; width: min(var(--header-w), 100%); margin: var(--header-top) auto 0; height: var(--header-bar-h);
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; column-gap: var(--space-6);
+  padding-inline: var(--space-3); background: var(--surface-white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.header__nav { display: flex; align-items: center; justify-content: flex-start; gap: var(--space-1); }
+.header__logo { display: block; }
+.header__logo img { height: var(--logo-header-h); width: auto; display: block; }
+.header__actions { display: flex; justify-content: flex-end; align-items: center; gap: var(--space-1); }
+.header__cta { margin-left: var(--space-2); min-width: 0; gap: var(--space-3); }
+.header .header__cta { font-size: var(--type-label-size); }
+
+/* .nav-pill: text link, NO fill at rest (border 1px transparent keeps the size); hover / focus-visible / pressed = fill (see below). Sizes --sm|--md|--lg; states: .is-active */
+.nav-pill {
+  --_h: var(--control-md);
+  display: inline-flex; align-items: center; gap: var(--space-2); height: var(--_h); padding-inline: calc(var(--space-3) - 1px);
+  background: transparent; border: 1px solid transparent; color: var(--text-accent); border-radius: var(--radius-md);
+  font-size: var(--type-body-size); line-height: 1; white-space: nowrap;
+  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.nav-pill--sm { --_h: var(--control-sm); }
+.nav-pill--md { --_h: var(--control-md); font-size: var(--type-label-size); }
+.nav-pill--lg { --_h: var(--control-lg); font-size: var(--type-body-size); padding-inline: calc(var(--space-5) - 1px); }
+.nav-pill.is-active { color: var(--text-accent); }
+/* Hover / focus / pressed: fill = Contact Us hover colour (--accent-hover), text + icon --accent-contrast; border matches fill so size does not change */
+.nav-pill:hover,
+.nav-pill.is-hover,
+.nav-pill:focus-visible,
+.nav-pill.is-focus,
+.nav-pill:active,
+.nav-pill.is-pressed { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--accent-contrast); }
+.nav-pill:hover .icon,
+.nav-pill.is-hover .icon,
+.nav-pill:focus-visible .icon,
+.nav-pill.is-focus .icon,
+.nav-pill:active .icon,
+.nav-pill.is-pressed .icon { color: var(--accent-contrast); }
+.nav-pill:active,
+.nav-pill.is-pressed { background: var(--accent-active); border-color: var(--accent-active); }
+/* .nav-pill--outline: Products, 1px accent outline at rest and when active; border-box keeps height = --_h */
+.nav-pill--outline { box-sizing: border-box; border: 1px solid var(--accent); padding-inline: var(--space-3); color: var(--text-accent); }
+
+/* Language switch: EN + globe; same border-only hover rule as .nav-pill (no fill) */
+.lang-switch {
+  --_h: var(--control-md);
+  display: inline-flex; align-items: center; gap: var(--space-2); height: var(--_h); padding-inline: calc(var(--space-3) - 1px);
+  border: 1px solid transparent; border-radius: var(--radius-md); background: transparent; color: var(--text-accent); font-size: var(--type-label-size);
+  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.lang-switch[aria-expanded="true"] { background: transparent; border-color: var(--accent); }
+.lang-switch:hover,
+.lang-switch.is-hover,
+.lang-switch:focus-visible,
+.lang-switch.is-focus,
+.lang-switch:active,
+.lang-switch.is-pressed { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--accent-contrast); }
+.lang-switch:hover .icon,
+.lang-switch.is-hover .icon,
+.lang-switch:focus-visible .icon,
+.lang-switch.is-focus .icon,
+.lang-switch:active .icon,
+.lang-switch.is-pressed .icon { color: var(--accent-contrast); }
+.lang-switch:active,
+.lang-switch.is-pressed { background: var(--accent-active); border-color: var(--accent-active); }
+.lang-switch--md { --_h: var(--control-md); }
+/* keyboard focus on the trigger = the same fill as hover, border 1px of the same colour; no extra outline ring (it would draw a second contour next to the 1px border) */
+.lang-switch:focus-visible,
+.lang-switch.is-focus { outline: none; }
+/* Chevron-down (no stem) after the globe; turns 180deg while the menu is open. Colour follows .lang-switch .icon states; motion off via global reduced-motion rule */
+.lang-switch__chevron { transition: transform var(--dur-fast) var(--ease-out); }
+.lang-menu.is-open .lang-switch__chevron,
+.lang-switch[aria-expanded="true"] .lang-switch__chevron { transform: rotate(180deg); }
+
+/* Language dropdown: compact popover under the .lang-switch trigger, right-aligned; white surface, 1px border, --radius-lg; options 44px (md), border-only hover. Active = accent colour; keyboard: Up/Down/Home/End, Enter, Esc */
+.lang-menu { position: relative; }
+.lang-menu__list {
+  position: absolute; top: calc(100% + var(--space-2)); right: 0; z-index: 1; min-width: 100%; margin: 0; padding: var(--space-1); list-style: none;
+  display: flex; flex-direction: column; gap: var(--space-1);
+  background: var(--surface-white); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  visibility: hidden; opacity: 0; transform: translateY(calc(-1 * var(--space-1)));
+  transition: opacity var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out), visibility 0s linear var(--dur-fast);
+}
+/* hover bridge: invisible strip over the gap between trigger and list, so the pointer never leaves the .lang-menu hover zone */
+.lang-menu__list::before { content: ""; position: absolute; left: 0; right: 0; top: calc(-1 * var(--space-2)); height: var(--space-2); }
+.lang-menu.is-open .lang-menu__list { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
+.lang-menu__option {
+  display: flex; align-items: center; height: var(--control-md); padding-inline: calc(var(--space-3) - 1px); box-sizing: border-box;
+  border: 1px solid transparent; border-radius: var(--radius-md); color: var(--text); font-size: var(--type-label-size); line-height: 1; white-space: nowrap; cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.lang-menu__option[aria-selected="true"] { color: var(--accent); }
+.lang-menu__option:hover,
+.lang-menu__option.is-focus { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--accent-contrast); }
+/* only ONE option is highlighted at a time: while the pointer is over the list, the keyboard/open highlight (.is-focus) on the other options is suppressed, hover wins */
+.lang-menu__list:hover .lang-menu__option.is-focus:not(:hover) { background: transparent; border-color: transparent; color: var(--text); }
+.lang-menu__list:hover .lang-menu__option.is-focus[aria-selected="true"]:not(:hover) { color: var(--accent); }
+.lang-menu__option:active,
+.lang-menu__option.is-pressed { background: var(--accent-active); border-color: var(--accent-active); color: var(--accent-contrast); }
+.lang-menu__list:focus-visible { outline: none; }
+/* highlight from hover/open is NOT a keyboard focus: no ring; ring only while the listbox has keyboard focus (not on the selected option) */
+.lang-menu__option.is-focus { outline: 0; }
+.lang-menu__list:focus-visible .lang-menu__option.is-focus:not([aria-selected="true"]) { outline: var(--focus-outline); outline-offset: var(--focus-offset); }

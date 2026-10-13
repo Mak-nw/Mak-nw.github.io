@@ -1,0 +1,65 @@
+/* Button: .btn + variant (--primary|--secondary|--ghost|--light) + size (--sm|--md|--lg) */
+.btn {
+  --_h: var(--control-md); --_px: var(--space-4);
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3);
+  height: var(--_h); padding-inline: var(--_px) calc(var(--_px) - var(--btn-pad-trim)); border: 1px solid transparent;
+  border-radius: var(--radius-md); font-size: var(--type-body-size); line-height: 1;
+  font-weight: var(--font-weight-regular); white-space: nowrap; cursor: pointer;
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur-fast);
+}
+/* Without an icon there is no right-edge icon to pull in: keep the padding symmetric */
+.btn:not(:has(.icon)) { padding-inline: var(--_px); }
+.btn--sm { --_h: var(--control-sm); --_px: var(--space-3); font-size: var(--type-label-size); }
+.btn--md { --_h: var(--control-md); }
+.btn--lg { --_h: var(--control-lg); --_px: var(--space-5); font-size: var(--type-body-size); }
+.btn--split { justify-content: space-between; min-width: var(--btn-split-w); }
+.btn--block { display: flex; width: 100%; justify-content: space-between; }
+
+.btn--primary { background: var(--accent); color: var(--accent-contrast); }
+.btn--primary:hover,
+.btn--primary.is-hover { background: var(--accent-hover); }
+.btn--primary:active,
+.btn--primary.is-pressed { background: var(--accent-active); transform: translateY(1px); }
+
+.btn--secondary { background: transparent; color: var(--accent); border-color: var(--accent); }
+.btn--secondary:hover,
+.btn--secondary.is-hover { background: var(--surface-sunken); }
+.btn--secondary:active,
+.btn--secondary.is-pressed { background: var(--surface-muted); transform: translateY(1px); }
+
+.btn--ghost { background: transparent; color: var(--accent); border-color: var(--border-strong); }
+.btn--ghost:hover,
+.btn--ghost.is-hover { background: var(--surface-white); }
+.btn--ghost:active,
+.btn--ghost.is-pressed { background: var(--surface-muted); transform: translateY(1px); }
+
+.btn--light { background: var(--surface-white); color: var(--accent); }
+.btn--light:hover,
+.btn--light.is-hover { background: var(--surface-white); border-color: var(--accent); }
+.btn--light:active,
+.btn--light.is-pressed { background: var(--surface-muted); border-color: var(--accent); transform: translateY(1px); }
+
+.btn:disabled, .btn.is-disabled { background: var(--disabled-bg); color: var(--disabled-text); border-color: transparent; cursor: not-allowed; pointer-events: none; transform: none; }
+
+/* Round icon button: .round-btn + (--outline|--light) + size */
+.round-btn {
+  --_s: var(--control-sm);
+  display: inline-grid; place-items: center; width: var(--_s); height: var(--_s); border-radius: var(--radius-full);
+  border: 1px solid var(--accent); color: var(--accent); background: transparent;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.round-btn--md { --_s: var(--control-md); } .round-btn--lg { --_s: var(--control-lg); }
+.round-btn:hover,
+a:hover > .round-btn--outline,
+.product-card:hover .round-btn--outline,
+.round-btn.is-hover,
+a.is-hover > .round-btn--outline,
+.product-card.is-hover .round-btn--outline { background: var(--accent); color: var(--accent-contrast); }
+.round-btn:active,
+.round-btn.is-pressed { background: var(--accent-active); border-color: var(--accent-active); color: var(--accent-contrast); }
+.round-btn--light { background: var(--surface-white); border-color: var(--surface-white); color: var(--accent); }
+.round-btn--light:hover,
+.round-btn--light.is-hover { background: var(--surface-white); color: var(--accent-hover); border-color: var(--accent); }
+.round-btn--light:active,
+.round-btn--light.is-pressed { background: var(--surface-muted); color: var(--accent-active); border-color: var(--accent); }
+.round-btn:disabled, .round-btn.is-disabled { background: var(--disabled-bg); border-color: transparent; color: var(--disabled-text); cursor: not-allowed; pointer-events: none; }

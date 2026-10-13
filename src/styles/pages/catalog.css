@@ -1,0 +1,12 @@
+/* Catalog page-only layout; values from tokens only. */
+.catalog__results { display: flex; flex-direction: column; gap: var(--grid-gap); min-width: 0; }
+.catalog__empty { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-4); background: var(--surface-raised); }
+.catalog__empty[hidden], .catalog__results [hidden] { display: none; }
+.catalog__more { align-self: stretch; width: 100%; justify-content: center; }
+.catalog__more[hidden] { display: none; }
+
+/* Sidebar CTA "Chat with manager" (2 cols wide, 121-209 px): button fills the card, label wraps, arrow icon stays inside on the right. */
+.catalog__help { padding: var(--space-4); }
+.catalog__help .btn { width: 100%; height: auto; min-height: var(--control-md); white-space: normal; justify-content: space-between; text-align: left; line-height: 1.25; padding-block: var(--space-3); }
+.catalog__help .btn span { min-width: 0; }
+.catalog__help .btn .icon { flex-shrink: 0; }
